@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "espacio oteiza",
+  title: "Espacio Oteiza",
   description: "exploring sculpture through space",
 };
 

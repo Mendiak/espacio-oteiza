@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, Calendar, Box, Maximize2, ChevronLeft } from "lucide-react";
+import { MapPin, Calendar, Box, Maximize2, ChevronLeft, Crosshair, Copy } from "lucide-react";
 import type { Artwork } from "@/lib/types";
 
 interface SidebarProps {
@@ -28,6 +28,7 @@ const T = {
   monument: { es: "Monumento", en: "Monument", eu: "Monumentua" },
   project: { es: "Proyecto", en: "Project", eu: "Proiektua" },
   location: { es: "Ubicación", en: "Location", eu: "Kokalekua" },
+  coordinates: { es: "Coordenadas", en: "Coordinates", eu: "Koordenadak" },
   year: { es: "Año", en: "Year", eu: "Urtea" },
   steel: { es: "Acero", en: "Steel", eu: "Altzairua" },
   iron: { es: "Hierro", en: "Iron", eu: "Burdina" },
@@ -98,6 +99,9 @@ export default function Sidebar({ artworks, lang, selectedArtwork, onClearSelect
     >
       {/* Header */}
       <div className="shrink-0 p-6 pb-4">
+        <h1 className="text-2xl uppercase tracking-tighter text-charcoal drop-shadow-md bg-offwhite/50 px-2 py-1 backdrop-blur-md transition-colors duration-500 mb-3">
+          espacio oteiza
+        </h1>
         <div className="flex items-center gap-3 mb-1">
           {isDetail && (
             <button
@@ -200,10 +204,17 @@ function DetailView({
   getLocalized: (artwork: Artwork, field: string) => string;
   title: (artwork: Artwork) => string;
 }) {
+  const [copied, setCopied] = useState(false);
   const city = getLocalized(artwork, "city");
   const country = getLocalized(artwork, "country");
   const description = getLocalized(artwork, "description");
   const materialsText = getLocalized(artwork, "materials");
+
+  const copyCoords = () => {
+    navigator.clipboard.writeText(`${artwork.latitude}, ${artwork.longitude}`);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  };
 
   return (
     <motion.div
@@ -271,6 +282,27 @@ function DetailView({
                 <span className="text-[8px] uppercase tracking-wider text-concrete font-bold">{t("location")}</span>
                 <span className="text-xs text-charcoal font-medium truncate">{city}, {country}</span>
               </div>
+            </div>
+          </div>
+
+          <div
+            className="flex items-start gap-2 mt-3 cursor-pointer group"
+            onClick={copyCoords}
+            title="Click to copy"
+          >
+            <Crosshair size={13} className="text-concrete mt-0.5 shrink-0" />
+            <div className="flex flex-col">
+              <span className="text-[8px] uppercase tracking-wider text-concrete font-bold flex items-center gap-1.5">
+                {t("coordinates")}
+                {copied ? (
+                  <span className="text-rust font-bold">Copied!</span>
+                ) : (
+                  <Copy size={9} className="text-concrete/40 group-hover:text-rust transition-colors" />
+                )}
+              </span>
+              <span className="text-xs text-charcoal font-medium font-mono">
+                {artwork.latitude.toFixed(4)}, {artwork.longitude.toFixed(4)}
+              </span>
             </div>
           </div>
         </div>
