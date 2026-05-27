@@ -65,7 +65,7 @@ export default function Preloader() {
               transition={{ duration: 1, delay: 2.2 }}
               className="absolute -bottom-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
             >
-              <span className="text-[14px] md:text-[16px] uppercase tracking-[0.6em] text-charcoal font-display">
+              <span className="text-[14px] md:text-[16px] uppercase tracking-[0.6em] text-charcoal font-display text-center">
                 ESPACIO OTEIZA
               </span>
               <motion.div 
@@ -74,7 +74,7 @@ export default function Preloader() {
                 transition={{ duration: 1.5, delay: 2.5 }}
                 className="h-px bg-rust/40" 
               />
-              <span className="text-[9px] uppercase tracking-[0.4em] text-concrete font-bold mt-1">
+              <span className="text-[9px] uppercase tracking-[0.4em] text-concrete font-bold mt-1 text-center">
                 Laboratorio de Desocupación
               </span>
             </motion.div>
