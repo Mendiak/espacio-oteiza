@@ -4,13 +4,13 @@ import { motion, AnimatePresence } from "framer-motion";
 interface FiltersProps {
   activeRegion: string | null;
   setActiveRegion: (r: string | null) => void;
-  activeTheme: string | null;
-  setActiveTheme: (t: string | null) => void;
+  activeCategory: string | null;
+  setActiveCategory: (c: string | null) => void;
   onResetView: () => void;
 }
 
 const REGIONS = ["Euskal Herria", "Spain", "Latin America", "World"];
-const THEMES = ["Public sculpture", "Experimental", "Spiritual"];
+const CATEGORIES = ["built", "intervention", "unbuilt"];
 
 const TOOLTIPS: Record<string, { title: string; desc: string }> = {
   "Euskal Herria": {
@@ -29,21 +29,21 @@ const TOOLTIPS: Record<string, { title: string; desc: string }> = {
     title: "Territorio: Internacional",
     desc: "Presencia global del artista, incluyendo certámenes de prestigio mundial como la Bienal de São Paulo y colecciones internacionales."
   },
-  "Public sculpture": {
-    title: "Concepto: Escultura Pública",
-    desc: "Monumentos a gran escala integrados en el paisaje urbano o natural, concebidos para dialogar activamente con la sociedad y el espacio común."
+  "built": {
+    title: "Obras Construidas",
+    desc: "Esculturas públicas, monumentos y obras permanentes que forman parte del paisaje físico y urbano."
   },
-  "Experimental": {
-    title: "Concepto: Experimental",
-    desc: "Piezas de investigación espacial pura, enfocadas en la desocupación de la esfera, el cubo y la activación activa del vacío."
+  "intervention": {
+    title: "Intervenciones Espaciales",
+    desc: "Integraciones de arquitectura y escultura, plazas, paisajes y obras espaciales urbanas."
   },
-  "Spiritual": {
-    title: "Concepto: Espiritual",
-    desc: "Obras que conciben el vacío no como la nada, sino como un espacio sagrado de trascendencia, silencio y comunión metafísica inspirado en los crómlechs vascos."
+  "unbuilt": {
+    title: "Proyectos no Realizados",
+    desc: "Proyectos, propuestas de concursos y trabajos conceptuales vinculados a localizaciones reales que no llegaron a ejecutarse."
   }
 };
 
-export default function Filters({ activeRegion, setActiveRegion, activeTheme, setActiveTheme, onResetView }: FiltersProps) {
+export default function Filters({ activeRegion, setActiveRegion, activeCategory, setActiveCategory, onResetView }: FiltersProps) {
   const [hoveredKey, setHoveredKey] = useState<string | null>(null);
 
   return (
@@ -80,19 +80,19 @@ export default function Filters({ activeRegion, setActiveRegion, activeTheme, se
         <div className="w-8 h-px bg-concrete/30" />
 
         <div className="flex flex-col gap-3">
-          <h3 className="text-[10px] uppercase tracking-[0.3em] text-concrete font-bold">Concept</h3>
-          {THEMES.map((theme) => (
+          <h3 className="text-[10px] uppercase tracking-[0.3em] text-concrete font-bold">Spatiality</h3>
+          {CATEGORIES.map((cat) => (
             <button
-              key={theme}
-              onClick={() => setActiveTheme(activeTheme === theme ? null : theme)}
-              onMouseEnter={() => setHoveredKey(theme)}
+              key={cat}
+              onClick={() => setActiveCategory(activeCategory === cat ? null : cat)}
+              onMouseEnter={() => setHoveredKey(cat)}
               onMouseLeave={() => setHoveredKey(null)}
-              className={`text-left text-xs transition-colors duration-500 flex items-center gap-2 cursor-pointer ${
-                activeTheme === theme ? "text-rust" : "text-charcoal hover:text-concrete"
+              className={`text-left text-xs transition-colors duration-500 flex items-center gap-2 cursor-pointer capitalize ${
+                activeCategory === cat ? "text-rust" : "text-charcoal hover:text-concrete"
               }`}
             >
-              <span className={`w-1 h-1 rounded-full ${activeTheme === theme ? "bg-rust" : "bg-transparent"}`} />
-              {theme}
+              <span className={`w-1 h-1 rounded-full ${activeCategory === cat ? "bg-rust" : "bg-transparent"}`} />
+              {cat}
             </button>
           ))}
         </div>

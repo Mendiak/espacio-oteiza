@@ -13,7 +13,7 @@ import type { MapRef } from "react-map-gl/maplibre";
 
 export default function Home() {
   const [activeRegion, setActiveRegion] = useState<string | null>(null);
-  const [activeTheme, setActiveTheme] = useState<string | null>(null);
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [selectedArtwork, setSelectedArtwork] = useState<Artwork | null>(null);
   const [lang, setLang] = useState<"es" | "en" | "eu">("es");
   const [aboutOpen, setAboutOpen] = useState(false);
@@ -25,7 +25,7 @@ export default function Home() {
   const handleResetView = () => {
     // Reset filters
     setActiveRegion(null);
-    setActiveTheme(null);
+    setActiveCategory(null);
     // Close artwork panel
     setSelectedArtwork(null);
     
@@ -50,7 +50,7 @@ export default function Home() {
         mapRef={mapRef}
         artworks={artworks}
         activeRegion={activeRegion}
-        activeTheme={activeTheme}
+        activeCategory={activeCategory}
         onSelectArtwork={setSelectedArtwork}
         lang={lang}
       />
@@ -58,8 +58,8 @@ export default function Home() {
       <Filters 
         activeRegion={activeRegion}
         setActiveRegion={setActiveRegion}
-        activeTheme={activeTheme}
-        setActiveTheme={setActiveTheme}
+        activeCategory={activeCategory}
+        setActiveCategory={setActiveCategory}
         onResetView={handleResetView}
       />
       

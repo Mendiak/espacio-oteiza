@@ -16,7 +16,8 @@ export interface Artwork {
   materials_es: string;
   materials_en: string;
   materials_eu: string;
-  themes: string[];
+  category: 'built' | 'intervention' | 'unbuilt';
+  subtype?: string;
   description_es: string;
   description_en: string;
   description_eu: string;

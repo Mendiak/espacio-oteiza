@@ -97,11 +97,14 @@ export default function ArtworkPanel({ artwork, onClose, lang }: ArtworkPanelPro
                 <p className="text-xs text-charcoal tracking-wide">{getMaterials(artwork)}</p>
               </div>
               <div>
-                <h4 className="text-[10px] uppercase tracking-[0.2em] text-concrete font-bold mb-2">Themes</h4>
-                <div className="flex flex-wrap gap-y-2 gap-x-4">
-                  {artwork.themes.map((theme) => (
-                    <span key={theme} className="text-xs text-charcoal tracking-wide">{theme}</span>
-                  ))}
+                <h4 className="text-[10px] uppercase tracking-[0.2em] text-concrete font-bold mb-2">Spatiality</h4>
+                <div className="flex flex-col gap-1">
+                  <span className="text-xs text-charcoal tracking-wide capitalize">{artwork.category}</span>
+                  {artwork.subtype && (
+                    <span className="text-[10px] uppercase tracking-[0.1em] text-concrete/70 font-medium italic">
+                      {artwork.subtype}
+                    </span>
+                  )}
                 </div>
               </div>
             </div>

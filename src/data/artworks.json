@@ -17,7 +17,8 @@
     "materials_es": "Acero",
     "materials_en": "Steel",
     "materials_eu": "Altzairua",
-    "themes": ["Spiritual", "Experimental"],
+    "category": "built",
+    "subtype": "sculpture",
     "description_es": "Una de las obras cumbre de Oteiza en su experimentación con el vacío. La caja metafísica no busca encerrar el espacio, sino protegerlo, creando una atmósfera de recogimiento espiritual.",
     "description_en": "One of Oteiza's crowning works in his experimentation with the void. The metaphysical box does not seek to enclose space, but rather to protect it, creating an atmosphere of spiritual retreat.",
     "description_eu": "Oteizaren hutsunearen esperimentazioaren gailurretako bat. Kutxa metafisikoak ez du espazioa itxi nahi, babestu baizik, biltze eta espiritualtasun giro bat sortuz."
@@ -40,7 +41,8 @@
     "materials_es": "Hierro",
     "materials_en": "Iron",
     "materials_eu": "Burdina",
-    "themes": ["Public sculpture", "Experimental"],
+    "category": "built",
+    "subtype": "sculpture",
     "description_es": "En su investigación sobre la esfera, Oteiza abre la forma para revelar el espacio interior, convirtiendo el volumen tradicional en una estructura de pura energía dinámica.",
     "description_en": "In his research on the sphere, Oteiza opens up the form to reveal the interior space, converting the traditional volume into a structure of pure dynamic energy.",
     "description_eu": "Esferari buruzko bere ikerketan, Oteizak forma irekitzen du barneko espazioa agerian uzteko, ohiko bolumena energia dinamiko hutseko egitura batean bihurtuz."
@@ -63,7 +65,8 @@
     "materials_es": "Piedra e Hierro",
     "materials_en": "Stone and Iron",
     "materials_eu": "Harria eta Burdina",
-    "themes": ["Spiritual", "Public sculpture"],
+    "category": "intervention",
+    "subtype": "landscape",
     "description_es": "Situada en un paraje megalítico impresionante, esta estela es un tributo a la música y la memoria. Una comunión perfecta entre la pieza escultórica y el paisaje circundante.",
     "description_en": "Located in an impressive megalithic landscape, this stele is a tribute to music and memory. A perfect communion between the sculptural piece and the surrounding landscape.",
     "description_eu": "Paisaia megalitiko ikusgarri baten kokatua, estela hau musika eta memoriaren omenaldia da. Eskulturaren eta inguruko paisaiaren arteko erabateko bat-egitea."
@@ -86,7 +89,8 @@
     "materials_es": "Acero",
     "materials_en": "Steel",
     "materials_eu": "Altzairua",
-    "themes": ["Public sculpture", "Experimental"],
+    "category": "built",
+    "subtype": "monument",
     "description_es": "Premiada en la Bienal de São Paulo, la Construcción Vacía desafía la gravedad y monumentaliza el espacio negativo frente al mar Cantábrico en el Paseo Nuevo.",
     "description_en": "Awarded at the São Paulo Biennial, the Empty Construction challenges gravity and monumentalizes negative space facing the Cantabrian Sea at the Paseo Nuevo.",
     "description_eu": "São Pauloko Biurtekoan saritua, Eraikitze Hutsak grabitateari aurre egiten dio eta itsasoaren aurrean espazio negatiboa monumentu bihurtzen du Pasealeku Berrian."
@@ -109,7 +113,8 @@
     "materials_es": "Bronce",
     "materials_en": "Bronze",
     "materials_eu": "Brontzea",
-    "themes": ["Spiritual", "Experimental"],
+    "category": "unbuilt",
+    "subtype": "project",
     "description_es": "Maqueta presentada para el concurso internacional de Londres. Refleja la tensión de la posguerra y el sufrimiento humano mediante formas agudas, dinámicas e inestables.",
     "description_en": "Maquette submitted for the London international competition. It reflects post-war tension and human suffering through sharp, dynamic, and unstable shapes.",
     "description_eu": "Londresko nazioarteko lehiaketarako aurkeztutako maketa. Gerraosteko tentsioa eta giza sufrimendua islatzen ditu forma zorrotz, dinamiko eta ez-egonkorren bidez."
@@ -132,7 +137,8 @@
     "materials_es": "Acero",
     "materials_en": "Steel",
     "materials_eu": "Altzairua",
-    "themes": ["Experimental"],
+    "category": "built",
+    "subtype": "sculpture",
     "description_es": "Un tributo a la abstracción geométrica y al suprematismo. Oteiza lleva los conceptos bidimensionales de Malevich a la tercera dimensión, jugando con la inmaterialidad y la sombra.",
     "description_en": "A tribute to geometric abstraction and Suprematism. Oteiza takes Malevich's two-dimensional concepts into the third dimension, playing with immateriality and shadow.",
     "description_eu": "Abstrakzio geometrikoari eta suprematismoari egindako omenaldia. Oteizak Malevichen bi dimentsioko kontzeptuak hirugarren dimentsiora eramaten ditu, inmaterialtasunarekin eta itzalarekin jolas eginez."
