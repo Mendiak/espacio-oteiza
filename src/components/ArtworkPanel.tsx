@@ -74,12 +74,19 @@ export default function ArtworkPanel({ artwork, onClose, lang }: ArtworkPanelPro
             <X size={20} strokeWidth={1.5} />
           </button>
 
-          <div className="relative h-[40vh] bg-charcoal/5 border-b border-concrete/10">
-            {/* Minimal placeholder for image since we don't have real images */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-16 h-16 border border-concrete/20 rotate-45" />
-              <span className="absolute text-[10px] uppercase tracking-[0.3em] text-concrete/50">{t.visual}</span>
-            </div>
+          <div className="relative h-[40vh] bg-charcoal/5 border-b border-concrete/10 overflow-hidden">
+            {artwork.image && !artwork.image.includes("placeholder") ? (
+              <img 
+                src={artwork.image} 
+                alt={getTitle(artwork)} 
+                className="w-full h-full object-cover grayscale filter transition-all duration-1000 hover:grayscale-0"
+              />
+            ) : (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-16 h-16 border border-concrete/20 rotate-45" />
+                <span className="absolute text-[10px] uppercase tracking-[0.3em] text-concrete/50">{t.visual}</span>
+              </div>
+            )}
           </div>
 
           <div className="p-10 flex-1 flex flex-col">
