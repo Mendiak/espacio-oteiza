@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --color-offwhite: #F4F4F0;
+  --color-charcoal: #1C1C1C;
+  --color-concrete: #8A8D8F;
+  --color-rust: #9B4A3A;
+  
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Etxeak", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  @font-face {
+    font-family: 'Etxeak';
+    src: url('/fonts/Etxeak.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  body {
+    background-color: var(--color-offwhite);
+    color: var(--color-charcoal);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: normal;
+  }
+
+  /* MapLibre minimal overrides */
+  .maplibregl-control-container {
+    display: none !important;
+  }
+  
+  /* Custom scrollbar for panels */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-concrete);
+  }
+}
