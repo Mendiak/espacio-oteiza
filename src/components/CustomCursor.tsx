@@ -2,11 +2,13 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
 
 export default function CustomCursor() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -55,8 +57,8 @@ export default function CustomCursor() {
           height: isHovering ? 24 : 6,
           x: isHovering ? -12 : -3,
           y: isHovering ? -12 : -3,
-          backgroundColor: isHovering ? "rgba(155, 74, 58, 0)" : "#1C1C1C",
-          border: isHovering ? "1px solid #9B4A3A" : "0px solid #1C1C1C",
+          backgroundColor: isHovering ? "rgba(155, 74, 58, 0)" : resolvedTheme === "dark" ? "#F4F4F0" : "#1C1C1C",
+          border: isHovering ? "1px solid #9B4A3A" : `0px solid ${resolvedTheme === "dark" ? "#F4F4F0" : "#1C1C1C"}`,
           borderRadius: isHovering ? 2 : 100,
         }}
         transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
