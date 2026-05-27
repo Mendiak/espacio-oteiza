@@ -61,6 +61,7 @@ export default function Home() {
         activeCategory={activeCategory}
         setActiveCategory={setActiveCategory}
         onResetView={handleResetView}
+        lang={lang}
       />
       
       <ArtworkPanel 

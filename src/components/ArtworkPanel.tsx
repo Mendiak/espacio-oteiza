@@ -50,6 +50,13 @@ export default function ArtworkPanel({ artwork, onClose, lang }: ArtworkPanelPro
       case "es": default: return art.materials_es;
     }
   };
+
+  const t = {
+    es: { materials: "Materiales", spatiality: "Espacialidad", built: "Obra Construida", intervention: "Intervención", unbuilt: "No Realizada", visual: "Archivo Visual" },
+    en: { materials: "Materials", spatiality: "Spatiality", built: "Built Work", intervention: "Intervention", unbuilt: "Unbuilt", visual: "Visual Archive" },
+    eu: { materials: "Materialak", spatiality: "Espazialitatea", built: "Eraikitako Obra", intervention: "Interbentzioa", unbuilt: "Eraiki Gabea", visual: "Artxibo Bisuala" }
+  }[lang];
+
   return (
     <AnimatePresence>
       {artwork && (
@@ -71,7 +78,7 @@ export default function ArtworkPanel({ artwork, onClose, lang }: ArtworkPanelPro
             {/* Minimal placeholder for image since we don't have real images */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-16 h-16 border border-concrete/20 rotate-45" />
-              <span className="absolute text-[10px] uppercase tracking-[0.3em] text-concrete/50">Archivo Visual</span>
+              <span className="absolute text-[10px] uppercase tracking-[0.3em] text-concrete/50">{t.visual}</span>
             </div>
           </div>
 
@@ -93,13 +100,13 @@ export default function ArtworkPanel({ artwork, onClose, lang }: ArtworkPanelPro
 
             <div className="mt-auto grid grid-cols-2 gap-8 border-t border-concrete/20 pt-8">
               <div>
-                <h4 className="text-[10px] uppercase tracking-[0.2em] text-concrete font-bold mb-2">Materials</h4>
+                <h4 className="text-[10px] uppercase tracking-[0.2em] text-concrete font-bold mb-2">{t.materials}</h4>
                 <p className="text-xs text-charcoal tracking-wide">{getMaterials(artwork)}</p>
               </div>
               <div>
-                <h4 className="text-[10px] uppercase tracking-[0.2em] text-concrete font-bold mb-2">Spatiality</h4>
+                <h4 className="text-[10px] uppercase tracking-[0.2em] text-concrete font-bold mb-2">{t.spatiality}</h4>
                 <div className="flex flex-col gap-1">
-                  <span className="text-xs text-charcoal tracking-wide capitalize">{artwork.category}</span>
+                  <span className="text-xs text-charcoal tracking-wide capitalize">{t[artwork.category as keyof typeof t]}</span>
                   {artwork.subtype && (
                     <span className="text-[10px] uppercase tracking-[0.1em] text-concrete/70 font-medium italic">
                       {artwork.subtype}
