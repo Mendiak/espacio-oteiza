@@ -11,7 +11,7 @@ interface MapProps {
   activeRegion: string | null;
   activeCategory: string | null;
   onSelectArtwork: (artwork: Artwork) => void;
-  mapRef: React.RefObject<MapRef> | null;
+  mapRef: React.RefObject<MapRef | null> | null;
   lang: "es" | "en" | "eu";
 }
 

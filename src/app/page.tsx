@@ -18,7 +18,7 @@ export default function Home() {
   const [lang, setLang] = useState<"es" | "en" | "eu">("es");
   const [aboutOpen, setAboutOpen] = useState(false);
   
-  const mapRef = useRef<MapRef>(null);
+  const mapRef = useRef<MapRef | null>(null);
 
   const artworks = artworksData as Artwork[];
 
