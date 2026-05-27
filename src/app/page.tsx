@@ -7,6 +7,8 @@ import Map from "@/components/Map";
 import ArtworkPanel from "@/components/ArtworkPanel";
 import Filters from "@/components/Filters";
 import AboutPanel from "@/components/AboutPanel";
+import CustomCursor from "@/components/CustomCursor";
+import Preloader from "@/components/Preloader";
 import artworksData from "@/data/artworks.json";
 import type { Artwork } from "@/lib/types";
 import type { MapRef } from "react-map-gl/maplibre";
@@ -45,7 +47,13 @@ export default function Home() {
 
   return (
     <main className="relative w-full h-screen overflow-hidden bg-offwhite transition-colors duration-500">
+      <Preloader />
+      <CustomCursor />
       <Landing />
+      
+      {/* Layout Grid / Margins for "Spatial Air" */}
+      <div className="absolute inset-4 md:inset-8 pointer-events-none z-20 border border-charcoal/5 pointer-events-none" />
+
       <Navigation lang={lang} setLang={setLang} onAboutClick={() => setAboutOpen(true)} />
       
       <Map 
@@ -58,16 +66,18 @@ export default function Home() {
         lang={lang}
       />
       
-      <Filters 
-        activeRegion={activeRegion}
-        setActiveRegion={setActiveRegion}
-        activeCategory={activeCategory}
-        setActiveCategory={setActiveCategory}
-        activeMaterial={activeMaterial}
-        setActiveMaterial={setActiveMaterial}
-        onResetView={handleResetView}
-        lang={lang}
-      />
+      <div className="absolute bottom-8 left-8 md:bottom-12 md:left-12 z-30">
+        <Filters 
+          activeRegion={activeRegion}
+          setActiveRegion={setActiveRegion}
+          activeCategory={activeCategory}
+          setActiveCategory={setActiveCategory}
+          activeMaterial={activeMaterial}
+          setActiveMaterial={setActiveMaterial}
+          onResetView={handleResetView}
+          lang={lang}
+        />
+      </div>
       
       <ArtworkPanel 
         artwork={selectedArtwork}
@@ -81,7 +91,7 @@ export default function Home() {
         lang={lang}
       />
 
-      <footer className="absolute bottom-4 right-8 z-30 transition-colors duration-500">
+      <footer className="absolute bottom-6 right-8 md:bottom-10 md:right-12 z-30 transition-colors duration-500">
         <a 
           href="https://mendiak.github.io/portfolio/" 
           target="_blank" 

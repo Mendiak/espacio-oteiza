@@ -67,7 +67,7 @@ export default function AboutPanel({ isOpen, onClose, lang }: AboutPanelProps) {
             animate={{ x: 0 }}
             exit={{ x: "-100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 200 }}
-            className="w-full sm:w-[500px] md:w-[600px] bg-offwhite h-full shadow-2xl p-8 md:p-12 flex flex-col justify-between overflow-y-auto transition-colors duration-500"
+            className="w-full sm:w-[500px] md:w-[600px] bg-offwhite h-full shadow-2xl p-8 md:p-12 flex flex-col justify-between overflow-y-auto transition-colors duration-500 oteiza-grain"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex flex-col">

@@ -106,7 +106,7 @@ export default function ArtworkPanel({ artwork, onClose, lang }: ArtworkPanelPro
           role="dialog"
           aria-modal="false"
           aria-labelledby="artwork-title"
-          className="fixed top-0 right-0 bottom-0 w-full md:w-[500px] bg-offwhite z-50 border-l border-charcoal/10 shadow-2xl flex flex-col overflow-y-auto transition-colors duration-500 custom-scrollbar"
+          className="fixed top-0 right-0 bottom-0 w-full md:w-[500px] bg-offwhite z-50 border-l border-charcoal/10 shadow-2xl flex flex-col overflow-y-auto transition-colors duration-500 custom-scrollbar oteiza-grain"
         >
           {/* Close Button */}
           <button
