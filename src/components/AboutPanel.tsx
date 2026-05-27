@@ -134,15 +134,33 @@ export default function AboutPanel({ isOpen, onClose, lang }: AboutPanelProps) {
             </div>
 
             {/* Geometric Art & Footer */}
-            <div className="mt-12 pt-8 border-t border-charcoal/10 flex items-center justify-between transition-colors duration-500">
-              {/* Minimalistic Oteiza Cube sketch */}
-              <div className="w-10 h-10 border border-concrete/40 relative flex items-center justify-center rotate-6">
-                <div className="absolute w-6 h-6 border border-rust/40 -rotate-12 translate-x-1 translate-y-1" />
-                <span className="text-[7px] text-concrete/60 font-mono">0</span>
+            <div className="mt-12 pt-8 border-t border-charcoal/10 flex flex-col gap-4 transition-colors duration-500">
+              <div className="flex items-center justify-between">
+                {/* Minimalistic Oteiza Cube sketch */}
+                <div className="w-10 h-10 border border-concrete/40 relative flex items-center justify-center rotate-6">
+                  <div className="absolute w-6 h-6 border border-rust/40 -rotate-12 translate-x-1 translate-y-1" />
+                  <span className="text-[7px] text-concrete/60 font-mono">0</span>
+                </div>
+                <span className="text-[9px] uppercase tracking-[0.15em] text-concrete font-medium transition-colors duration-500">
+                  {t.footer}
+                </span>
               </div>
-              <span className="text-[9px] uppercase tracking-[0.15em] text-concrete font-medium transition-colors duration-500">
-                {t.footer}
-              </span>
+              <div className="flex items-center justify-between">
+                <a 
+                  href="https://mendiak.github.io/portfolio/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-[9px] uppercase tracking-[0.15em] text-concrete/50 hover:text-rust transition-colors duration-300 font-medium"
+                >
+                  {lang === "eu" ? "Egilea" : lang === "en" ? "By" : "Por"} Mikel Aramendia
+                </a>
+                <div>
+                  <a href="https://www.buymeacoffee.com/Mendiak" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 px-2.5 py-1 text-concrete/60 hover:text-rust border border-concrete/20 hover:border-rust/40 transition-all duration-300 rounded-sm">
+                    <span className="text-[12px]">☕</span>
+                    <span className="text-[8px] uppercase tracking-[0.15em] font-medium">Buy me a coffee</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </motion.div>
         </motion.div>

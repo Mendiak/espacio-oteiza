@@ -22,7 +22,7 @@ const T = {
     territory: "Territorio",
     spatiality: "Espacialidad",
     material: "Material",
-    reset: "Restablecer Vista",
+    reset: "Restablecer Filtros",
     built: "Obras Construidas",
     intervention: "Intervenciones",
     unbuilt: "No Realizadas",
@@ -36,7 +36,7 @@ const T = {
     territory: "Territory",
     spatiality: "Spatiality",
     material: "Material",
-    reset: "Reset View",
+    reset: "Reset Filters",
     built: "Built Works",
     intervention: "Interventions",
     unbuilt: "Unbuilt",
@@ -50,7 +50,7 @@ const T = {
     territory: "Lurraldea",
     spatiality: "Espazialitatea",
     material: "Materiala",
-    reset: "Ikuspegia Berrezarri",
+    reset: "Iragazkiak Berrezarri",
     built: "Eraikitako Obrak",
     intervention: "Interbentzioak",
     unbuilt: "Eraiki Gabeak",
@@ -119,7 +119,7 @@ export default function Filters({ activeRegion, setActiveRegion, activeCategory,
   };
 
   return (
-    <div className="absolute bottom-8 left-8 z-30 flex items-start gap-4">
+    <div className="flex items-start gap-4 flex-row-reverse">
       <motion.div 
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}

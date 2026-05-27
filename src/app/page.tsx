@@ -4,7 +4,7 @@ import { useState, useRef } from "react";
 import Navigation from "@/components/Navigation";
 import Landing from "@/components/Landing";
 import Map from "@/components/Map";
-import ArtworkPanel from "@/components/ArtworkPanel";
+import Sidebar from "@/components/Sidebar";
 import Filters from "@/components/Filters";
 import AboutPanel from "@/components/AboutPanel";
 import CustomCursor from "@/components/CustomCursor";
@@ -24,6 +24,19 @@ export default function Home() {
   const mapRef = useRef<MapRef | null>(null);
 
   const artworks = artworksData as Artwork[];
+
+  const handleSelectArtwork = (artwork: Artwork) => {
+    setSelectedArtwork(artwork);
+    if (mapRef.current) {
+      mapRef.current.flyTo({
+        center: [artwork.longitude, artwork.latitude],
+        zoom: 13,
+        pitch: 45,
+        duration: 2500,
+        essential: true,
+      });
+    }
+  };
 
   const handleResetView = () => {
     // Reset filters
@@ -66,7 +79,7 @@ export default function Home() {
         lang={lang}
       />
       
-      <div className="absolute bottom-8 left-8 md:bottom-12 md:left-12 z-30">
+      <div className="absolute bottom-8 right-8 z-30">
         <Filters 
           activeRegion={activeRegion}
           setActiveRegion={setActiveRegion}
@@ -79,10 +92,15 @@ export default function Home() {
         />
       </div>
       
-      <ArtworkPanel 
-        artwork={selectedArtwork}
-        onClose={() => setSelectedArtwork(null)}
+      <Sidebar 
+        artworks={artworks}
         lang={lang}
+        selectedArtwork={selectedArtwork}
+        onClearSelection={() => setSelectedArtwork(null)}
+        onSelectArtwork={handleSelectArtwork}
+        activeRegion={activeRegion}
+        activeCategory={activeCategory}
+        activeMaterial={activeMaterial}
       />
 
       <AboutPanel 
@@ -91,16 +109,7 @@ export default function Home() {
         lang={lang}
       />
 
-      <footer className="absolute bottom-6 right-8 md:bottom-10 md:right-12 z-30 transition-colors duration-500">
-        <a 
-          href="https://mendiak.github.io/portfolio/" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="text-[9px] uppercase tracking-[0.3em] text-concrete hover:text-rust transition-colors duration-500 font-medium"
-        >
-          {lang === "eu" ? "Egilea" : lang === "en" ? "By" : "Por"} Mikel Aramendia
-        </a>
-      </footer>
+
     </main>
   );
 }
