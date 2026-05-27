@@ -19,6 +19,7 @@ const CONTENT = {
     theoryText: "Para Oteiza, la escultura no consiste en rellenar el espacio con masa, sino en desocuparlo. Su 'Propósito Experimental' culminó en 1959 al declarar conclusa su obra escultórica, habiendo alcanzado la 'caja vacía' o 'caja metafísica': un espacio protegido y cargado de energía espiritual donde el vacío se convierte en pura presencia activa y trascendente.",
     biographyTitle: "Jorge Oteiza (1908–2003)",
     biographyText: "Nacido en Orio, Oteiza fue uno de los artistas y teóricos más influyentes de la vanguardia del siglo XX. Ganador del Gran Premio de Escultura en la Bienal de São Paulo (1957), su trabajo abarcó no solo la escultura en hierro, piedra y tizas, sino también la poesía, la arquitectura, la antropología y la política cultural vasca.",
+    readMore: "Leer más en Wikipedia",
     footer: "Prototipo de Investigación Estética v1.0 — 2026"
   },
   en: {
@@ -30,6 +31,7 @@ const CONTENT = {
     theoryText: "For Oteiza, sculpture is not about filling space with mass, but about de-occupying it. His 'Experimental Purpose' culminated in 1959 when he declared his sculptural work complete, having achieved the 'empty box' or 'metaphysical box': a protected space charged with spiritual energy where the void becomes pure active and transcendent presence.",
     biographyTitle: "Jorge Oteiza (1908–2003)",
     biographyText: "Born in Orio, Oteiza was one of the most influential artists and theorists of the 20th-century avant-garde. Winner of the Grand Prize for Sculpture at the São Paulo Biennial (1957), his work spanned not only sculpture in iron, stone, and chalk, but also poetry, architecture, anthropology, and Basque cultural politics.",
+    readMore: "Read more on Wikipedia",
     footer: "Aesthetic Research Prototype v1.0 — 2026"
   },
   eu: {
@@ -41,6 +43,7 @@ const CONTENT = {
     theoryText: "Oteizarentzat, eskultura ez da espazioa masaz betetzea, desokupatzea baizik. Bere 'Proposamen Esperimentala' 1959an amaitu zen bere lan eskultorikoa bukatutzat eman zuenean, 'kutxa hutsa' edo 'kutxa metafisikoa' lortu ondoren: energia espiritualez kargatutako espazio babestua, non hutsunea presentzia aktibo eta transzendente huts bihurtzen den.",
     biographyTitle: "Jorge Oteiza (1908–2003)",
     biographyText: "Orion jaioa, Oteiza XX. mendeko abangoardiako artista eta teoriko garrantzitsuenetarikoa izan zen. São Pauloko Biurtekoan Eskultura Sari Nagusia irabazi zuen (1957). Bere lanak burdinazko, harrizko eta tizas egindako eskultura ez ezik, olerkigintza, arkitektura, antropologia eta euskal kultura-politika ere jorratu zituen.",
+    readMore: "Gehiago irakurri Wikipedian",
     footer: "Ikerketa Estetikoaren Prototipoa v1.0 — 2026"
   }
 };
@@ -56,7 +59,7 @@ export default function AboutPanel({ isOpen, onClose, lang }: AboutPanelProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.6 }}
-          className="fixed inset-0 bg-charcoal/30 backdrop-blur-sm z-50 flex justify-start pointer-events-auto"
+          className="fixed inset-0 bg-charcoal/60 backdrop-blur-sm z-50 flex justify-start pointer-events-auto transition-colors duration-500"
           onClick={onClose}
         >
           <motion.div
@@ -64,7 +67,7 @@ export default function AboutPanel({ isOpen, onClose, lang }: AboutPanelProps) {
             animate={{ x: 0 }}
             exit={{ x: "-100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 200 }}
-            className="w-full sm:w-[500px] md:w-[600px] bg-offwhite h-full shadow-2xl p-8 md:p-12 flex flex-col justify-between overflow-y-auto"
+            className="w-full sm:w-[500px] md:w-[600px] bg-offwhite h-full shadow-2xl p-8 md:p-12 flex flex-col justify-between overflow-y-auto transition-colors duration-500"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex flex-col">
@@ -72,7 +75,7 @@ export default function AboutPanel({ isOpen, onClose, lang }: AboutPanelProps) {
               <div className="flex justify-end mb-8">
                 <button
                   onClick={onClose}
-                  className="p-2 text-concrete hover:text-charcoal transition-colors border border-concrete/20 hover:border-charcoal/30 rounded-full cursor-pointer"
+                  className="p-2 text-concrete hover:text-rust transition-colors border border-charcoal/10 hover:border-charcoal/30 rounded-full cursor-pointer"
                 >
                   <X size={20} strokeWidth={1.5} />
                 </button>
@@ -80,54 +83,64 @@ export default function AboutPanel({ isOpen, onClose, lang }: AboutPanelProps) {
 
               {/* Title Section */}
               <div className="mb-10">
-                <span className="text-[10px] uppercase tracking-[0.3em] text-rust font-bold block mb-2">
+                <span className="text-[10px] uppercase tracking-[0.3em] text-rust font-bold block mb-2 transition-colors duration-500">
                   {t.title}
                 </span>
-                <h2 className="text-3xl md:text-4xl font-display tracking-tight text-charcoal leading-tight">
+                <h2 className="text-3xl md:text-4xl font-display tracking-tight text-charcoal leading-tight transition-colors duration-500">
                   {t.subtitle}
                 </h2>
-                <div className="w-16 h-[2px] bg-rust mt-4" />
+                <div className="w-16 h-[2px] bg-rust mt-4 transition-colors duration-500" />
               </div>
 
               {/* Content Sections */}
               <div className="flex flex-col gap-8 pr-2">
                 <div>
-                  <h3 className="text-xs uppercase tracking-[0.2em] text-concrete font-bold mb-3">
+                  <h3 className="text-xs uppercase tracking-[0.2em] text-concrete font-bold mb-3 transition-colors duration-500">
                     {t.projectTitle}
                   </h3>
-                  <p className="text-sm leading-relaxed text-charcoal/80 font-light text-justify">
+                  <p className="text-sm leading-relaxed text-charcoal/80 font-light text-justify transition-colors duration-500">
                     {t.projectText}
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-xs uppercase tracking-[0.2em] text-concrete font-bold mb-3">
+                  <h3 className="text-xs uppercase tracking-[0.2em] text-concrete font-bold mb-3 transition-colors duration-500">
                     {t.theoryTitle}
                   </h3>
-                  <p className="text-sm leading-relaxed text-charcoal/80 font-light text-justify">
+                  <p className="text-sm leading-relaxed text-charcoal/80 font-light text-justify transition-colors duration-500">
                     {t.theoryText}
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-xs uppercase tracking-[0.2em] text-concrete font-bold mb-3">
+                  <h3 className="text-xs uppercase tracking-[0.2em] text-concrete font-bold mb-3 transition-colors duration-500">
                     {t.biographyTitle}
                   </h3>
-                  <p className="text-sm leading-relaxed text-charcoal/80 font-light text-justify">
-                    {t.biographyText}
-                  </p>
+                  <div className="flex flex-col gap-4">
+                    <p className="text-sm leading-relaxed text-charcoal/80 font-light text-justify transition-colors duration-500">
+                      {t.biographyText}
+                    </p>
+                    <a 
+                      href="https://es.wikipedia.org/wiki/Jorge_de_Oteiza" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-[10px] uppercase tracking-[0.2em] text-rust hover:text-charcoal font-bold self-start transition-colors duration-300 border-b border-rust/30 hover:border-charcoal/30 pb-0.5"
+                    >
+                      {t.readMore} →
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Geometric Art & Footer */}
-            <div className="mt-12 pt-8 border-t border-concrete/20 flex items-center justify-between">
+            <div className="mt-12 pt-8 border-t border-charcoal/10 flex items-center justify-between transition-colors duration-500">
               {/* Minimalistic Oteiza Cube sketch */}
               <div className="w-10 h-10 border border-concrete/40 relative flex items-center justify-center rotate-6">
                 <div className="absolute w-6 h-6 border border-rust/40 -rotate-12 translate-x-1 translate-y-1" />
                 <span className="text-[7px] text-concrete/60 font-mono">0</span>
               </div>
-              <span className="text-[9px] uppercase tracking-[0.15em] text-concrete font-medium">
+              <span className="text-[9px] uppercase tracking-[0.15em] text-concrete font-medium transition-colors duration-500">
                 {t.footer}
               </span>
             </div>

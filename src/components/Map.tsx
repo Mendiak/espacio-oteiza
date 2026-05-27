@@ -1,21 +1,33 @@
 "use client";
 
-import { useMemo, useRef } from "react";
+import { useMemo, useEffect, useState } from "react";
 import MapGL, { Marker, MapRef } from "react-map-gl/maplibre";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
+import { useTheme } from "next-themes";
 import type { Artwork } from "@/lib/types";
 
 interface MapProps {
   artworks: Artwork[];
   activeRegion: string | null;
   activeCategory: string | null;
+  activeMaterial: string | null;
   onSelectArtwork: (artwork: Artwork) => void;
   mapRef: React.RefObject<MapRef | null> | null;
   lang: "es" | "en" | "eu";
 }
 
-export default function Map({ artworks, activeRegion, activeCategory, onSelectArtwork, mapRef, lang }: MapProps) {
+const LIGHT_STYLE = "https://basemaps.cartocdn.com/gl/positron-nolabels-gl-style/style.json";
+const DARK_STYLE = "https://basemaps.cartocdn.com/gl/dark-matter-nolabels-gl-style/style.json";
+
+export default function Map({ artworks, activeRegion, activeCategory, activeMaterial, onSelectArtwork, mapRef, lang }: MapProps) {
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
 
   const filteredArtworks = useMemo(() => {
     return artworks.filter(artwork => {
@@ -24,8 +36,6 @@ export default function Map({ artworks, activeRegion, activeCategory, onSelectAr
         const city = artwork.city_en;
         
         if (activeRegion === "Euskal Herria") {
-          const isEH = ["Bilbao", "San Sebastian", "Agiña", "Vitoria", "Pamplona"].includes(city) || 
-                       (country === "Spain" && ["Gipuzkoa", "Bizkaia", "Araba", "Navarra"].some(p => artwork.description_es.includes(p)));
           // Simplified for the mock data:
           if (!["Bilbao", "San Sebastian", "Agiña"].includes(city)) return false;
         } else if (activeRegion === "Spain") {
@@ -42,10 +52,14 @@ export default function Map({ artworks, activeRegion, activeCategory, onSelectAr
       if (activeCategory && artwork.category !== activeCategory) {
         return false;
       }
+
+      if (activeMaterial && !artwork.material.includes(activeMaterial)) {
+        return false;
+      }
       
       return true;
     });
-  }, [artworks, activeRegion, activeCategory]);
+  }, [artworks, activeRegion, activeCategory, activeMaterial]);
 
   const getTitle = (artwork: Artwork) => {
     switch (lang) {
@@ -62,17 +76,17 @@ export default function Map({ artworks, activeRegion, activeCategory, onSelectAr
   const getMarkerStyle = (category: string) => {
     switch (category) {
       case "intervention":
-        return "bg-rust rotate-45 scale-110 border-white";
+        return "bg-rust rotate-45 scale-110 border-offwhite";
       case "unbuilt":
         return "bg-charcoal/30 border-charcoal/20 opacity-60 scale-90 dashed";
       case "built":
       default:
-        return "bg-charcoal border-[#F4F4F0]";
+        return "bg-charcoal border-offwhite";
     }
   };
 
   return (
-    <div className="absolute inset-0 z-0">
+    <div className="absolute inset-0 z-0 transition-opacity duration-1000">
       <MapGL
         ref={mapRef}
         initialViewState={{
@@ -81,7 +95,7 @@ export default function Map({ artworks, activeRegion, activeCategory, onSelectAr
           zoom: 4,
           pitch: 10,
         }}
-        mapStyle="https://basemaps.cartocdn.com/gl/positron-nolabels-gl-style/style.json"
+        mapStyle={mounted && theme === "dark" ? DARK_STYLE : LIGHT_STYLE}
         mapLib={maplibregl}
         attributionControl={false}
       >
@@ -106,7 +120,7 @@ export default function Map({ artworks, activeRegion, activeCategory, onSelectAr
             <div className="group relative cursor-pointer">
               <div className={`w-4 h-4 border-2 transition-all duration-700 ease-in-out shadow-lg group-hover:scale-150 group-hover:bg-rust ${getMarkerStyle(artwork.category)}`} />
               
-              <div className="absolute top-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none whitespace-nowrap bg-white/80 backdrop-blur-sm px-2 py-1 text-[10px] uppercase tracking-widest text-charcoal border border-concrete/20">
+              <div className="absolute top-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none whitespace-nowrap bg-offwhite/80 backdrop-blur-sm px-2 py-1 text-[10px] uppercase tracking-widest text-charcoal border border-charcoal/10">
                 {getTitle(artwork)}
               </div>
             </div>

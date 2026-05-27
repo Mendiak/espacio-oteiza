@@ -14,6 +14,7 @@ import type { MapRef } from "react-map-gl/maplibre";
 export default function Home() {
   const [activeRegion, setActiveRegion] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [activeMaterial, setActiveMaterial] = useState<string | null>(null);
   const [selectedArtwork, setSelectedArtwork] = useState<Artwork | null>(null);
   const [lang, setLang] = useState<"es" | "en" | "eu">("es");
   const [aboutOpen, setAboutOpen] = useState(false);
@@ -26,6 +27,7 @@ export default function Home() {
     // Reset filters
     setActiveRegion(null);
     setActiveCategory(null);
+    setActiveMaterial(null);
     // Close artwork panel
     setSelectedArtwork(null);
     
@@ -42,7 +44,7 @@ export default function Home() {
   };
 
   return (
-    <main className="relative w-full h-screen overflow-hidden bg-[#F4F4F0]">
+    <main className="relative w-full h-screen overflow-hidden bg-offwhite transition-colors duration-500">
       <Landing />
       <Navigation lang={lang} setLang={setLang} onAboutClick={() => setAboutOpen(true)} />
       
@@ -51,6 +53,7 @@ export default function Home() {
         artworks={artworks}
         activeRegion={activeRegion}
         activeCategory={activeCategory}
+        activeMaterial={activeMaterial}
         onSelectArtwork={setSelectedArtwork}
         lang={lang}
       />
@@ -60,6 +63,8 @@ export default function Home() {
         setActiveRegion={setActiveRegion}
         activeCategory={activeCategory}
         setActiveCategory={setActiveCategory}
+        activeMaterial={activeMaterial}
+        setActiveMaterial={setActiveMaterial}
         onResetView={handleResetView}
         lang={lang}
       />
@@ -69,6 +74,23 @@ export default function Home() {
         onClose={() => setSelectedArtwork(null)}
         lang={lang}
       />
+
+      <AboutPanel 
+        isOpen={aboutOpen}
+        onClose={() => setAboutOpen(false)}
+        lang={lang}
+      />
+
+      <footer className="absolute bottom-4 right-8 z-30 transition-colors duration-500">
+        <a 
+          href="https://mendiak.github.io/portfolio/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-[9px] uppercase tracking-[0.3em] text-concrete hover:text-rust transition-colors duration-500 font-medium"
+        >
+          {lang === "eu" ? "Egilea" : lang === "en" ? "By" : "Por"} Mikel Aramendia
+        </a>
+      </footer>
     </main>
   );
 }

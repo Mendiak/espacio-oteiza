@@ -1,13 +1,27 @@
 @import "tailwindcss";
 
 @theme {
-  --color-offwhite: #F4F4F0;
-  --color-charcoal: #1C1C1C;
-  --color-concrete: #8A8D8F;
-  --color-rust: #9B4A3A;
+  --color-offwhite: var(--offwhite);
+  --color-charcoal: var(--charcoal);
+  --color-concrete: var(--concrete);
+  --color-rust: var(--rust);
   
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-display: "Etxeak", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --offwhite: #F4F4F0;
+  --charcoal: #1C1C1C;
+  --concrete: #8A8D8F;
+  --rust: #9B4A3A;
+}
+
+.dark {
+  --offwhite: #121212;
+  --charcoal: #F4F4F0;
+  --concrete: #4A4D4F;
+  --rust: #D46A55;
 }
 
 @layer base {
@@ -26,6 +40,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow: hidden;
+    transition: background-color 0.5s ease, color 0.5s ease;
   }
   
   h1, h2, h3, h4, h5, h6 {

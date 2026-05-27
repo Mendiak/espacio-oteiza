@@ -1,7 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTheme } from "next-themes";
+import { Sun, Moon } from "lucide-react";
 
 interface NavigationProps {
   lang: "es" | "en" | "eu";
@@ -32,7 +34,16 @@ const TRANSLATIONS = {
 
 export default function Navigation({ lang, setLang, onAboutClick }: NavigationProps) {
   const [showDisclaimer, setShowDisclaimer] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
+  
   const t = TRANSLATIONS[lang];
+
+  // Avoid hydration mismatch
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
 
   const handleNavClick = () => {
     setShowDisclaimer(true);
@@ -43,17 +54,17 @@ export default function Navigation({ lang, setLang, onAboutClick }: NavigationPr
     <>
       <nav className="absolute top-0 left-0 right-0 z-40 p-6 flex justify-between items-center pointer-events-none">
         <div className="pointer-events-auto">
-          <h1 className="text-2xl uppercase tracking-tighter text-charcoal drop-shadow-md bg-white/50 px-2 py-1 backdrop-blur-md">espacio oteiza</h1>
+          <h1 className="text-2xl uppercase tracking-tighter text-charcoal drop-shadow-md bg-offwhite/50 px-2 py-1 backdrop-blur-md transition-colors duration-500">espacio oteiza</h1>
         </div>
         
         <div className="pointer-events-auto flex items-center gap-3">
-          <div className="hidden md:flex gap-8 text-xs font-semibold uppercase tracking-[0.2em] text-charcoal bg-white/50 px-4 py-2 backdrop-blur-md border border-white/20 shadow-sm">
+          <div className="hidden md:flex gap-8 text-xs font-semibold uppercase tracking-[0.2em] text-charcoal bg-offwhite/50 px-4 py-2 backdrop-blur-md border border-charcoal/10 shadow-sm transition-colors duration-500">
             <button onClick={onAboutClick} className="hover:text-rust transition-colors cursor-pointer">{t.about}</button>
             <button onClick={handleNavClick} className="hover:text-rust transition-colors cursor-pointer">{t.archive}</button>
             <button onClick={handleNavClick} className="hover:text-rust transition-colors cursor-pointer">{t.index}</button>
           </div>
           
-          <div className="flex gap-2 text-[10px] font-bold tracking-wider text-concrete bg-white/50 px-3 py-2 backdrop-blur-md border border-white/20 shadow-sm">
+          <div className="flex gap-2 text-[10px] font-bold tracking-wider text-concrete bg-offwhite/50 px-3 py-2 backdrop-blur-md border border-charcoal/10 shadow-sm transition-colors duration-500">
             <button 
               onClick={() => setLang("es")} 
               className={`hover:text-rust transition-colors cursor-pointer ${lang === "es" ? "text-rust font-black" : ""}`}
@@ -75,6 +86,13 @@ export default function Navigation({ lang, setLang, onAboutClick }: NavigationPr
               EU
             </button>
           </div>
+
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="flex items-center justify-center w-9 h-9 bg-offwhite/50 backdrop-blur-md border border-charcoal/10 text-charcoal hover:text-rust transition-all duration-500 shadow-sm"
+          >
+            {mounted && (theme === "dark" ? <Sun size={14} /> : <Moon size={14} />)}
+          </button>
         </div>
       </nav>
 
@@ -84,7 +102,7 @@ export default function Navigation({ lang, setLang, onAboutClick }: NavigationPr
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="absolute top-20 right-6 z-50 bg-charcoal text-[#F4F4F0] text-[10px] uppercase tracking-[0.2em] px-4 py-2 shadow-sm"
+            className="absolute top-20 right-6 z-50 bg-charcoal text-offwhite text-[10px] uppercase tracking-[0.2em] px-4 py-2 shadow-sm transition-colors duration-500"
           >
             {t.disclaimer}
           </motion.div>
