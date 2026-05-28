@@ -36,6 +36,23 @@ const T = {
   bronze: { es: "Bronce", en: "Bronze", eu: "Brontzea" },
 };
 
+const EUSKAL_HERRIA_CITIES = [
+  "Agiña",
+  "Bilbao",
+  "Oñati",
+  "Pamplona",
+  "San Sebastian",
+];
+
+const LATIN_AMERICA_COUNTRIES = [
+  "Argentina",
+  "Chile",
+  "Colombia",
+  "Mexico",
+  "Peru",
+  "Uruguay",
+];
+
 export default function Sidebar({ artworks, lang, selectedArtwork, onClearSelection, onSelectArtwork, activeRegion, activeCategory, activeMaterial }: SidebarProps) {
   const [listSelected, setListSelected] = useState<Artwork | null>(null);
 
@@ -44,12 +61,12 @@ export default function Sidebar({ artworks, lang, selectedArtwork, onClearSelect
       const country = artwork.country_en;
       const city = artwork.city_en;
       if (activeRegion === "Euskal Herria") {
-        if (!["Bilbao", "San Sebastian", "Agiña"].includes(city)) return false;
+        if (!EUSKAL_HERRIA_CITIES.includes(city)) return false;
       } else if (activeRegion === "Spain") {
         if (country !== "Spain") return false;
-        if (["Bilbao", "San Sebastian", "Agiña"].includes(city)) return false;
+        if (EUSKAL_HERRIA_CITIES.includes(city)) return false;
       } else if (activeRegion === "Latin America") {
-        if (!["Colombia", "Argentina", "Mexico", "Peru", "Chile"].includes(country)) return false;
+        if (!LATIN_AMERICA_COUNTRIES.includes(country)) return false;
       } else if (activeRegion === "World") {
         if (["Spain"].includes(country)) return false;
       }
@@ -141,7 +158,7 @@ export default function Sidebar({ artworks, lang, selectedArtwork, onClearSelect
                       <img
                         src={artwork.image}
                         alt={getLocalized(artwork, "title")}
-                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                        className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
                       />
                     ) : (
                       <div className="w-8 h-8 border border-concrete/20 rotate-45 flex items-center justify-center">
@@ -229,7 +246,7 @@ function DetailView({
             <img
               src={artwork.image}
               alt={getLocalized(artwork, "title")}
-              className="w-full h-full object-cover grayscale filter transition-all duration-1000 group-hover/img:grayscale-0 group-hover/img:scale-105"
+              className="w-full h-full object-contain grayscale filter transition-all duration-1000 group-hover/img:grayscale-0"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-charcoal/20 to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-700" />
           </>

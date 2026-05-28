@@ -20,6 +20,23 @@ interface MapProps {
 const LIGHT_STYLE = "https://basemaps.cartocdn.com/gl/positron-nolabels-gl-style/style.json";
 const DARK_STYLE = "https://basemaps.cartocdn.com/gl/dark-matter-nolabels-gl-style/style.json";
 
+const EUSKAL_HERRIA_CITIES = [
+  "Agiña",
+  "Bilbao",
+  "Oñati",
+  "Pamplona",
+  "San Sebastian",
+];
+
+const LATIN_AMERICA_COUNTRIES = [
+  "Argentina",
+  "Chile",
+  "Colombia",
+  "Mexico",
+  "Peru",
+  "Uruguay",
+];
+
 export default function Map({ artworks, activeRegion, activeCategory, activeMaterial, onSelectArtwork, mapRef, lang }: MapProps) {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -36,14 +53,12 @@ export default function Map({ artworks, activeRegion, activeCategory, activeMate
         const city = artwork.city_en;
         
         if (activeRegion === "Euskal Herria") {
-          // Simplified for the mock data:
-          if (!["Bilbao", "San Sebastian", "Agiña"].includes(city)) return false;
+          if (!EUSKAL_HERRIA_CITIES.includes(city)) return false;
         } else if (activeRegion === "Spain") {
           if (country !== "Spain") return false;
-          // Exclude EH cities if EH is a separate region filter
-          if (["Bilbao", "San Sebastian", "Agiña"].includes(city)) return false;
+          if (EUSKAL_HERRIA_CITIES.includes(city)) return false;
         } else if (activeRegion === "Latin America") {
-          if (!["Colombia", "Argentina", "Mexico", "Peru", "Chile"].includes(country)) return false;
+          if (!LATIN_AMERICA_COUNTRIES.includes(country)) return false;
         } else if (activeRegion === "World") {
           if (["Spain"].includes(country)) return false;
         }
