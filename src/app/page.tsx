@@ -8,7 +8,6 @@ import Sidebar from "@/components/Sidebar";
 import Filters from "@/components/Filters";
 import AboutPanel from "@/components/AboutPanel";
 import CustomCursor from "@/components/CustomCursor";
-import Preloader from "@/components/Preloader";
 import artworksData from "@/data/artworks.json";
 import type { Artwork } from "@/lib/types";
 import type { MapRef } from "react-map-gl/maplibre";
@@ -60,7 +59,6 @@ export default function Home() {
 
   return (
     <main className="relative w-full h-screen overflow-hidden bg-offwhite transition-colors duration-500">
-      <Preloader />
       <CustomCursor />
       <Landing />
       
