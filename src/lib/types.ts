@@ -22,4 +22,5 @@ export interface Artwork {
   description_es: string;
   description_en: string;
   description_eu: string;
+  reference?: string;
 }

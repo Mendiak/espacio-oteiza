@@ -35,6 +35,7 @@ const T = {
   iron: { es: "Hierro", en: "Iron", eu: "Burdina" },
   stone: { es: "Piedra", en: "Stone", eu: "Harria" },
   bronze: { es: "Bronce", en: "Bronze", eu: "Brontzea" },
+  reference: { es: "Referencia", en: "Reference", eu: "Erreferentzia" },
 };
 
 const EUSKAL_HERRIA_CITIES = [
@@ -297,11 +298,11 @@ function DetailView({
                 <span className="text-xs text-charcoal font-medium">{artwork.year}</span>
               </div>
             </div>
-            <div className="flex items-start gap-2">
+            <div className="flex items-start gap-2 min-w-0">
               <MapPin size={13} className="text-concrete mt-0.5 shrink-0" />
-              <div className="flex flex-col">
+              <div className="flex flex-col min-w-0">
                 <span className="text-[8px] uppercase tracking-wider text-concrete font-bold">{t("location")}</span>
-                <span className="text-xs text-charcoal font-medium truncate">{city}, {country}</span>
+                <span className="text-xs text-charcoal font-medium break-words">{city}, {country}</span>
               </div>
             </div>
           </div>
@@ -334,6 +335,17 @@ function DetailView({
           <p className="text-sm leading-relaxed text-charcoal/90 font-light text-justify transition-colors duration-500">
             {description}
           </p>
+          {artwork.reference && (
+            <a
+              href={artwork.reference}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 mt-3 text-[10px] uppercase tracking-[0.15em] text-rust/70 hover:text-rust transition-colors duration-300 font-semibold"
+            >
+              <span className="w-3 h-px bg-rust/30" />
+              {t("reference")}
+            </a>
+          )}
         </div>
 
         <div className="pt-5 border-t border-charcoal/10 grid grid-cols-2 gap-6">

@@ -29,7 +29,8 @@ const T = {
     steel: "Acero",
     iron: "Hierro",
     stone: "Piedra",
-    bronze: "Bronce"
+    bronze: "Bronce",
+    reference: "Referencia"
   },
   en: {
     materials: "Materials",
@@ -48,7 +49,8 @@ const T = {
     steel: "Steel",
     iron: "Iron",
     stone: "Stone",
-    bronze: "Bronze"
+    bronze: "Bronze",
+    reference: "Reference"
   },
   eu: {
     materials: "Materialak",
@@ -67,7 +69,8 @@ const T = {
     steel: "Altzairua",
     iron: "Burdina",
     stone: "Harria",
-    bronze: "Brontzea"
+    bronze: "Brontzea",
+    reference: "Erreferentzia"
   }
 };
 
@@ -164,11 +167,11 @@ export default function ArtworkPanel({ artwork, onClose, lang }: ArtworkPanelPro
                     <span className="text-sm text-charcoal font-medium">{artwork.year}</span>
                   </div>
                 </div>
-                <div className="flex items-start gap-2">
-                  <MapPin size={14} className="text-concrete mt-0.5" />
-                  <div className="flex flex-col">
+                <div className="flex items-start gap-2 min-w-0">
+                  <MapPin size={14} className="text-concrete mt-0.5 shrink-0" />
+                  <div className="flex flex-col min-w-0">
                     <span className="text-[9px] uppercase tracking-wider text-concrete font-bold">{t.location}</span>
-                    <span className="text-sm text-charcoal font-medium">{city}, {country}</span>
+                    <span className="text-sm text-charcoal font-medium break-words">{city}, {country}</span>
                   </div>
                 </div>
               </div>
@@ -179,6 +182,17 @@ export default function ArtworkPanel({ artwork, onClose, lang }: ArtworkPanelPro
               <p className="text-base md:text-lg leading-relaxed text-charcoal/90 font-light text-justify transition-colors duration-500">
                 {description}
               </p>
+              {artwork.reference && (
+                <a
+                  href={artwork.reference}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 mt-4 text-xs uppercase tracking-[0.15em] text-rust/70 hover:text-rust transition-colors duration-300 font-semibold"
+                >
+                  <span className="w-4 h-px bg-rust/30" />
+                  {t.reference}
+                </a>
+              )}
             </div>
 
             <div className="mt-auto pt-10 border-t border-charcoal/10 grid grid-cols-2 gap-10">
