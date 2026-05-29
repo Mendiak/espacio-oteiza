@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Landing from "@/components/Landing";
 import Map from "@/components/Map";
@@ -19,6 +19,13 @@ export default function Home() {
   const [selectedArtwork, setSelectedArtwork] = useState<Artwork | null>(null);
   const [lang, setLang] = useState<"es" | "en" | "eu">("es");
   const [aboutOpen, setAboutOpen] = useState(false);
+
+  // Detect browser language on mount
+  useEffect(() => {
+    const browserLang = navigator.language?.split("-")[0];
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    if (browserLang === "en" || browserLang === "eu") setLang(browserLang);
+  }, []);
   
   const mapRef = useRef<MapRef | null>(null);
 
@@ -60,7 +67,7 @@ export default function Home() {
   return (
     <main className="relative w-full h-screen overflow-hidden bg-offwhite transition-colors duration-500">
       <CustomCursor />
-      <Landing />
+      <Landing lang={lang} />
       
       {/* Layout Grid / Margins for "Spatial Air" */}
       <div className="absolute inset-4 md:inset-8 pointer-events-none z-20 border border-charcoal/5 pointer-events-none" />

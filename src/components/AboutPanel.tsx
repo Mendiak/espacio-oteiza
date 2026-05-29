@@ -107,7 +107,7 @@ export default function AboutPanel({ isOpen, onClose, lang }: AboutPanelProps) {
             animate={{ x: 0 }}
             exit={{ x: "-100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 200 }}
-            className="w-full sm:w-[500px] md:w-[600px] bg-offwhite h-full shadow-2xl p-8 md:p-12 flex flex-col justify-between overflow-y-auto transition-colors duration-500 oteiza-grain"
+            className="w-full sm:w-125 md:w-150 bg-offwhite h-full shadow-2xl p-8 md:p-12 flex flex-col justify-between overflow-y-auto transition-colors duration-500 oteiza-grain"
             onClick={(e) => e.stopPropagation()}
             onKeyDown={handleKeyDown}
           >
@@ -132,7 +132,7 @@ export default function AboutPanel({ isOpen, onClose, lang }: AboutPanelProps) {
                 <h2 id="about-panel-title" className="text-3xl md:text-4xl font-display tracking-tight text-charcoal leading-tight transition-colors duration-500">
                   {t.subtitle}
                 </h2>
-                <div className="w-16 h-[2px] bg-rust mt-4 transition-colors duration-500" />
+                <div className="w-16 h-0.5 bg-rust mt-4 transition-colors duration-500" />
               </div>
 
               {/* Content Sections */}

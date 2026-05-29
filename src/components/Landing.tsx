@@ -52,7 +52,13 @@ const structuralLines: { points: [number, number][]; delay: number }[] = [
   { points: [[40, 10], [0, -110]], delay: 0.8 },
 ];
 
-export default function Landing() {
+const SUBTITLES = {
+  es: "explorando la escultura a través del espacio",
+  en: "exploring sculpture through space",
+  eu: "eskultura espazioaren bidez aztertzen"
+};
+
+export default function Landing({ lang }: { lang: "es" | "en" | "eu" }) {
   const [phase, setPhase] = useState<"intro" | "title" | "exiting" | "hidden">("intro");
 
   useEffect(() => {
@@ -333,7 +339,7 @@ export default function Landing() {
           transition={{ duration: 1, delay: 1.3, ease: [0.16, 1, 0.3, 1] }}
           className="text-xs md:text-sm tracking-[0.35em] uppercase text-concrete font-light text-center px-4 max-w-[280px] leading-relaxed"
         >
-          exploring sculpture through space
+          {SUBTITLES[lang]}
         </motion.p>
 
         {/* Bottom accent line */}
