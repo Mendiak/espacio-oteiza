@@ -109,10 +109,10 @@ export default function Sidebar({ artworks, lang, selectedArtwork, onClearSelect
 
   return (
     <motion.aside
-      initial={{ x: -380, opacity: 0 }}
+      initial={{ x: "-100%", opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed top-0 left-0 bottom-0 w-[380px] bg-offwhite z-40 border-r border-charcoal/10 shadow-2xl flex flex-col transition-colors duration-500 oteiza-grain"
+      className="fixed top-0 left-0 bottom-0 w-[min(430px,100vw)] bg-offwhite z-40 border-r border-charcoal/10 shadow-2xl flex flex-col transition-colors duration-500 oteiza-grain"
     >
       {/* Header */}
       <div className="shrink-0 p-6 pb-4">
@@ -153,7 +153,7 @@ export default function Sidebar({ artworks, lang, selectedArtwork, onClearSelect
                   className="flex gap-4 text-left w-full p-3 border border-charcoal/5 hover:border-charcoal/20 bg-offwhite hover:bg-charcoal/[0.02] transition-all duration-300 group cursor-pointer"
                 >
                   {/* Thumbnail */}
-                  <div className="w-16 h-16 shrink-0 bg-charcoal/5 border border-charcoal/10 overflow-hidden flex items-center justify-center">
+                  <div className="w-24 h-24 shrink-0 bg-charcoal/5 border border-charcoal/10 overflow-hidden flex items-center justify-center">
                     {artwork.image && !artwork.image.includes("placeholder") ? (
                       <img
                         src={artwork.image}
@@ -161,8 +161,8 @@ export default function Sidebar({ artworks, lang, selectedArtwork, onClearSelect
                         className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
                       />
                     ) : (
-                      <div className="w-8 h-8 border border-concrete/20 rotate-45 flex items-center justify-center">
-                        <div className="w-5 h-5 border border-rust/20 -rotate-12" />
+                      <div className="w-10 h-10 border border-concrete/20 rotate-45 flex items-center justify-center">
+                        <div className="w-6 h-6 border border-rust/20 -rotate-12" />
                       </div>
                     )}
                   </div>
@@ -172,16 +172,18 @@ export default function Sidebar({ artworks, lang, selectedArtwork, onClearSelect
                     <h3 className="text-xs uppercase tracking-[0.05em] text-charcoal font-medium leading-snug transition-colors duration-500 line-clamp-2">
                       {title(artwork)}
                     </h3>
-                    <div className="flex items-center gap-2 mt-1.5">
+                    <div className="flex flex-col gap-0.5 mt-1.5">
                       <span className="text-[9px] uppercase tracking-[0.15em] text-concrete font-medium">
                         {artwork.year}
                       </span>
-                      <span className="w-1 h-1 rounded-full bg-concrete/30" />
+                      <span className="text-[9px] uppercase tracking-[0.15em] text-concrete font-medium truncate">
+                        {getLocalized(artwork, "city")}
+                      </span>
                       <span className="text-[9px] uppercase tracking-[0.15em] text-concrete font-medium truncate">
                         {t(artwork.category)}
                       </span>
                     </div>
-                    <div className="flex items-center gap-1.5 mt-1">
+                    <div className="flex items-center gap-1.5 mt-1.5">
                       {artwork.material.map((m) => (
                         <span
                           key={m}
@@ -240,7 +242,7 @@ function DetailView({
       exit={{ opacity: 0 }}
     >
       {/* Image */}
-      <div className="relative h-[200px] bg-charcoal/5 border border-charcoal/10 overflow-hidden mb-6 transition-colors duration-500 group/img">
+      <div className="relative h-[260px] bg-charcoal/5 border border-charcoal/10 overflow-hidden mb-6 transition-colors duration-500 group/img">
         {artwork.image && !artwork.image.includes("placeholder") ? (
           <>
             <img

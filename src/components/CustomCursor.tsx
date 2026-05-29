@@ -49,7 +49,7 @@ export default function CustomCursor() {
         x: mousePos.x,
         y: mousePos.y,
       }}
-      transition={{ type: "spring", damping: 30, stiffness: 400, mass: 0.5 }}
+      transition={{ duration: 0 }}
     >
       <motion.div
         animate={{

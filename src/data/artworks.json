@@ -20,9 +20,9 @@
     "material": ["steel"],
     "category": "built",
     "subtype": "sculpture",
-    "description_es": "Obra conclusiva del laboratorio experimental de Oteiza, realizada en acero en 1958 y conservada en la colección del Guggenheim Bilbao. La caja no encierra el espacio: lo activa y lo protege como un vacío espiritual.",
-    "description_en": "A concluding work from Oteiza's experimental laboratory, made in steel in 1958 and held in the Guggenheim Bilbao collection. The box does not enclose space: it activates and protects it as a spiritual void.",
-    "description_eu": "Oteizaren laborategi esperimentalaren amaierako obra da, 1958an altzairuz egina eta Guggenheim Bilbao Museoaren bilduman gordea. Kutxak ez du espazioa ixten: hutsune espiritual gisa aktibatu eta babesten du."
+    "description_es": "Realizada en acero en 1958 y conservada en el Guggenheim Bilbao, pertenece a las obras conclusivas del Propósito Experimental de Oteiza. En esta caja metafísica, dos triedros delimitan un interior oscuro y silencioso donde el cubo deja de ser masa para convertirse en un vacío receptivo, casi sagrado. La pieza resume su búsqueda final: desocupar la materia para que el espacio actúe como presencia.",
+    "description_en": "Made in steel in 1958 and held by the Guggenheim Bilbao, this work belongs to the conclusive phase of Oteiza's Experimental Purpose. In this metaphysical box, two trihedrons define a dark, silent interior where the cube ceases to be mass and becomes a receptive, almost sacred void. The piece condenses his final search: to de-occupy matter so that space itself becomes presence.",
+    "description_eu": "1958an altzairuz egina eta Guggenheim Bilbaon gordea, Oteizaren Propósito Experimentalaren amaierako obren artean kokatzen da. Kutxa metafisiko honetan, bi triedrok barne ilun eta isil bat mugatzen dute, eta kuboa masa izatetik hutsune hartzaile, ia sakratu, bihurtzen da. Pieza honek haren azken bilaketa laburbiltzen du: materia desokupatzea, espazioa bera presentzia bihur dadin."
   },
   {
     "id": "obra-2",
@@ -45,9 +45,9 @@
     "material": ["steel"],
     "category": "built",
     "subtype": "monument",
-    "description_es": "Escultura pública instalada frente al Ayuntamiento de Bilbao en 2002 a partir de la investigación de 1958 sobre la desocupación de la esfera. Su escala monumental hace visible la tensión entre masa, vacío y movimiento junto a la ría.",
-    "description_en": "A public sculpture installed opposite Bilbao City Hall in 2002, based on Oteiza's 1958 research into the de-occupation of the sphere. Its monumental scale makes visible the tension between mass, void, and movement beside the estuary.",
-    "description_eu": "Bilboko Udaletxearen aurrean 2002an jarritako eskultura publikoa da, Oteizak 1958an esferaren desokupazioaz egindako ikerketatik abiatua. Eskala monumentalak masa, hutsunea eta mugimenduaren arteko tentsioa agerian uzten du itsasadarraren ondoan."
+    "description_es": "Instalada frente al Ayuntamiento de Bilbao en 2002, esta ampliación monumental deriva de las investigaciones de Oteiza de 1958 sobre la desocupación de la esfera. La forma ovoide, abierta y atravesada por el aire, convierte una figura cerrada en un organismo espacial en tensión. Junto a la ría, la obra funciona como umbral urbano y como demostración pública de su idea de que el vacío puede ser el verdadero centro de la escultura.",
+    "description_en": "Installed opposite Bilbao City Hall in 2002, this monumental enlargement stems from Oteiza's 1958 research into the de-occupation of the sphere. The open ovoid form, pierced by air, turns a closed figure into a spatial organism held in tension. Beside the estuary, the work acts both as an urban threshold and as a public demonstration of his idea that void can be the true center of sculpture.",
+    "description_eu": "Bilboko Udaletxearen aurrean 2002an instalatua, handitze monumental hau Oteizak 1958an esferaren desokupazioaz egindako ikerketetatik dator. Forma oboide irekiak, aireak zeharkatua, figura itxi bat tentsioan dagoen organismo espazial bihurtzen du. Itsasadarraren ondoan, obra hiri-atalase gisa eta hutsunea eskulturaren benetako erdigunea izan daitekeela erakusten duen adierazpen publiko gisa agertzen da."
   },
   {
     "id": "obra-3",
@@ -70,9 +70,9 @@
     "material": ["stone", "iron"],
     "category": "intervention",
     "subtype": "landscape",
-    "description_es": "Intervención realizada por Jorge Oteiza y Luis Vallet en el monte Agiña en homenaje al músico Aita Donostia. La estela escultórica y la capilla articulan paisaje megalítico, memoria y espacio sagrado.",
-    "description_en": "An intervention by Jorge Oteiza and Luis Vallet on Mount Agiña in homage to the musician Father Donostia. The sculptural stele and chapel bring together megalithic landscape, memory, and sacred space.",
-    "description_eu": "Jorge Oteizak eta Luis Valletek Agiña mendian Aita Donostia musikariari egindako omenaldia da. Estela eskultorikoak eta kaperak paisaia megalitikoa, memoria eta espazio sakratua uztartzen dituzte."
+    "description_es": "Jorge Oteiza y el arquitecto Luis Vallet levantaron este conjunto en Agiña en 1959, en memoria del compositor y musicólogo Aita Donostia. La estela perforada de Oteiza y la capilla de Vallet dialogan con un paisaje marcado por cromlechs y túmulos prehistóricos, de modo que la obra no se impone al lugar, sino que lo escucha. Es una de sus intervenciones pioneras en el paisaje y contiene claves de su fase conclusiva: silencio, vacío, rito y memoria.",
+    "description_en": "Jorge Oteiza and architect Luis Vallet created this ensemble at Agiña in 1959 in memory of composer and musicologist Father Donostia. Oteiza's pierced stele and Vallet's chapel enter into dialogue with a landscape marked by prehistoric cromlechs and burial mounds, so the work does not impose itself on the site but listens to it. It is one of his pioneering landscape interventions and contains key elements of his conclusive phase: silence, void, ritual, and memory.",
+    "description_eu": "Jorge Oteizak eta Luis Vallet arkitektoak Agiñako multzo hau 1959an sortu zuten, Aita Donostia konpositore eta musikologoaren omenez. Oteizaren estela zulatuak eta Valleten kaperak cromlech eta tumulu prehistorikoz markatutako paisaiarekin hitz egiten dute; obrak ez dio lekuari gaina hartzen, entzun egiten dio. Paisaian egindako esku-hartze aitzindarietako bat da, eta haren fase conclusiboaren giltzak biltzen ditu: isiltasuna, hutsunea, erritua eta memoria."
   },
   {
     "id": "obra-4",
@@ -95,9 +95,9 @@
     "material": ["steel"],
     "category": "built",
     "subtype": "monument",
-    "description_es": "La pieza instalada en el Paseo Nuevo de Donostia procede del ciclo de construcciones vacías premiado en la IV Bienal de São Paulo. Colocada frente al Cantábrico en 2002, monumentaliza el espacio negativo como presencia activa.",
-    "description_en": "The work installed on San Sebastian's Paseo Nuevo belongs to the cycle of empty constructions recognized at the 4th São Paulo Biennial. Placed facing the Cantabrian Sea in 2002, it monumentalizes negative space as an active presence.",
-    "description_eu": "Donostiako Pasealeku Berrian jarritako obra São Pauloko IV. Biurtekoan saritutako eraikitze hutsen zikloari lotzen zaio. 2002an Kantauri itsasoaren aurrean kokatuta, espazio negatiboa presentzia aktibo bihurtzen du."
+    "description_es": "La escultura del Paseo Nuevo de Donostia, instalada en 2002, amplía a escala urbana una obra de 1957 vinculada al ciclo de construcciones vacías premiado en la IV Bienal de São Paulo. Sus planos de acero corten recortan el aire y encuadran el horizonte marítimo, haciendo que el Cantábrico forme parte de la pieza. Más que ocupar el paseo, la obra abre un lugar de contemplación donde vacío, ciudad y oleaje quedan en equilibrio.",
+    "description_en": "The sculpture on San Sebastian's Paseo Nuevo, installed in 2002, enlarges to urban scale a 1957 work linked to the cycle of empty constructions recognized at the 4th São Paulo Biennial. Its Corten steel planes cut through the air and frame the maritime horizon, making the Cantabrian Sea part of the piece. Rather than simply occupying the promenade, the work opens a place of contemplation where void, city, and surf are held in balance.",
+    "description_eu": "Donostiako Pasealeku Berriko eskultura, 2002an instalatua, 1957ko obra baten hiri-eskalako handitzea da, São Pauloko IV. Biurtekoan saritutako eraikitze hutsen zikloari lotua. Corten altzairuzko planoek airea ebakitzen dute eta itsas horizontea markoztatzen dute, Kantauri itsasoa piezaren parte bihurtuz. Pasealekua betetzea baino gehiago, obrak kontenplaziorako leku bat irekitzen du, hutsunea, hiria eta olatuak orekan jarriz."
   },
   {
     "id": "obra-5",
@@ -120,9 +120,9 @@
     "material": [],
     "category": "unbuilt",
     "subtype": "project",
-    "description_es": "Propuesta presentada al concurso internacional convocado en Londres por el Institute of Contemporary Arts y la Tate Gallery. El proyecto existió como maqueta y planteamiento escultórico, aunque no se ejecutó como monumento londinense.",
-    "description_en": "A proposal submitted to the international competition organized in London by the Institute of Contemporary Arts and the Tate Gallery. The project existed as a maquette and sculptural concept, although it was not executed as a London monument.",
-    "description_eu": "Institute of Contemporary Arts-ek eta Tate Gallery-k Londresen deitutako nazioarteko lehiaketarako aurkeztutako proposamena. Proiektua maketa eta planteamendu eskultoriko gisa existitu zen, baina ez zen Londresko monumentu gisa gauzatu."
+    "description_es": "Proyecto presentado al concurso internacional para un Monumento al Prisionero Político Desconocido, convocado en Londres por el Institute of Contemporary Arts y la Tate Gallery a comienzos de los años cincuenta. Oteiza planteó una memoria no figurativa, lejos del monumento heroico tradicional: cuerpos verticales, tensión espacial y una abstracción capaz de aludir al cautiverio sin narrarlo. Aunque no se construyó en Londres, el proyecto se convirtió en una referencia persistente dentro de su obra pública posterior.",
+    "description_en": "A project submitted to the international competition for a Monument to the Unknown Political Prisoner, organized in London by the Institute of Contemporary Arts and the Tate Gallery in the early 1950s. Oteiza proposed a non-figurative memorial, far from the traditional heroic monument: vertical bodies, spatial tension, and an abstraction able to evoke captivity without narrating it. Although it was not built in London, the project became a lasting reference in his later public work.",
+    "description_eu": "1950eko hamarkadaren hasieran Institute of Contemporary Arts-ek eta Tate Gallery-k Londresen deitutako Preso Politiko Ezezagunaren Monumenturako nazioarteko lehiaketara aurkeztutako proiektua. Oteizak oroimen ez-figuratiboa proposatu zuen, monumentu heroiko tradizionaletik urrun: gorputz bertikalak, tentsio espaziala eta gatibutasuna kontatu gabe iradokitzeko gai den abstrakzioa. Londresen eraiki ez bazen ere, proiektua haren ondorengo obra publikoaren erreferentzia iraunkor bihurtu zen."
   },
   {
     "id": "obra-6",
@@ -145,9 +145,9 @@
     "material": ["iron"],
     "category": "built",
     "subtype": "sculpture",
-    "description_es": "Obra de 1957 vinculada al Propósito Experimental y expuesta en la IV Bienal de São Paulo, donde Oteiza obtuvo el gran premio de escultura. Traslada la unidad geométrica de Malevich a una experiencia espacial abierta.",
-    "description_en": "A 1957 work linked to the Experimental Purpose and exhibited at the 4th São Paulo Biennial, where Oteiza received the Grand Prize for sculpture. It translates Malevich's geometric unit into an open spatial experience.",
-    "description_eu": "1957ko obra da, Propósito Experimental delakoari lotua eta São Pauloko IV. Biurtekoan erakutsia, non Oteizak eskulturako sari nagusia jaso zuen. Malevichen unitate geometrikoa esperientzia espazial ireki batera eramaten du."
+    "description_es": "Realizada en 1957 en acero forjado, esta pieza forma parte de las investigaciones de Oteiza sobre la Unidad Malevich y fue expuesta en la IV Bienal de São Paulo. La geometría suprematista deja de ser plano pictórico y se convierte en rotación, apertura y energía espacial. En su pequeña escala se reconoce la intensidad del Propósito Experimental: liberar la forma de la masa y activar el vacío que la rodea.",
+    "description_en": "Made in forged steel in 1957, this piece belongs to Oteiza's research into the Malevich Unit and was shown at the 4th São Paulo Biennial. Suprematist geometry leaves the pictorial plane and becomes rotation, openness, and spatial energy. Its small scale carries the intensity of the Experimental Purpose: freeing form from mass and activating the void around it.",
+    "description_eu": "1957an altzairu forjatuan egina, pieza hau Oteizaren Malevich Unitateari buruzko ikerketen parte da eta São Pauloko IV. Biurtekoan erakutsi zen. Geometria suprematista plano piktorikotik ateratzen da eta biraketa, irekiera eta energia espazial bihurtzen da. Eskala txikian Propósito Experimentalaren intentsitatea ageri da: forma masatik askatzea eta inguruko hutsunea aktibatzea."
   },
   {
     "id": "obra-7",
@@ -170,9 +170,9 @@
     "material": ["stone"],
     "category": "intervention",
     "subtype": "monument",
-    "description_es": "Conjunto escultórico de la fachada de la Basílica de Arantzazu. Encargado en los años cincuenta y finalmente instalado en 1969, es una de las intervenciones decisivas de Oteiza entre arquitectura, religiosidad moderna y conflicto cultural.",
-    "description_en": "The sculptural ensemble on the façade of the Basilica of Arantzazu. Commissioned in the 1950s and finally installed in 1969, it is one of Oteiza's decisive interventions between architecture, modern religiosity, and cultural conflict.",
-    "description_eu": "Arantzazuko Basilikaren fatxadako multzo eskultorikoa. 1950eko hamarkadan enkargatua eta 1969an behin betiko instalatua, Oteizaren esku-hartze erabakigarrietako bat da arkitekturaren, erlijio modernoaren eta kultura-gatazkaren artean."
+    "description_es": "El apostolado y La Piedad de la fachada del Santuario de Arantzazu, en Oñati, son una de las obras capitales de Oteiza y una intervención clave del arte religioso moderno en Europa. Encargado para la nueva basílica proyectada por Sáenz de Oiza y Laorga, el conjunto fue paralizado durante años por la polémica sobre sus formas radicales y se instaló finalmente en 1969. Sus catorce apóstoles, austeros y vaciados, y la Piedad superior transforman la fachada en una escena de fe contemporánea, herida y colectiva, donde la espiritualidad nace de la materia desocupada.",
+    "description_en": "The apostles and Pietà on the façade of the Sanctuary of Arantzazu, in Oñati, are one of Oteiza's major works and a key intervention in modern religious art in Europe. Commissioned for the new basilica designed by Sáenz de Oiza and Laorga, the ensemble was halted for years by controversy over its radical forms and was finally installed in 1969. Its fourteen austere, hollowed apostles and the Pietà above turn the façade into a contemporary scene of faith, wounded and collective, where spirituality emerges from de-occupied matter.",
+    "description_eu": "Oñatiko Arantzazuko Santutegiko fatxadako apostolutza eta Pietatea Oteizaren obra nagusietako bat dira, eta Europako arte erlijioso modernoaren esku-hartze garrantzitsua. Sáenz de Oiza eta Laorgak proiektatutako basilika berrirako enkargatua, multzoa urte luzez geldiarazi zuten bere forma erradikalen inguruko polemikek, eta 1969an instalatu zen azkenean. Hamalau apostolu soil eta hustuek eta goiko Pietateak fatxada fede garaikidearen eszena zauritu eta kolektibo bihurtzen dute, espiritualtasuna materia desokupatutik sortzen den leku batean."
   },
   {
     "id": "obra-8",
@@ -195,9 +195,9 @@
     "material": [],
     "category": "unbuilt",
     "subtype": "project",
-    "description_es": "Proyecto no construido de Francisco Javier Sáenz de Oiza, José Luis Romaní y Jorge Oteiza, ganador del Premio Nacional de Arquitectura de 1954. Planteaba una capilla moderna, abstracta y fundida con el paisaje del Camino.",
-    "description_en": "An unbuilt project by Francisco Javier Sáenz de Oiza, José Luis Romaní, and Jorge Oteiza, winner of the 1954 National Architecture Prize. It proposed a modern, abstract chapel fused with the landscape of the pilgrimage route.",
-    "description_eu": "Francisco Javier Sáenz de Oizak, José Luis Romaník eta Jorge Oteizak egindako eraiki gabeko proiektua, 1954ko Arkitekturako Sari Nazionala irabazi zuena. Kapera moderno, abstraktu eta Bidearen paisaiarekin uztartutakoa proposatzen zuen."
+    "description_es": "Proyecto no construido de Francisco Javier Sáenz de Oiza, José Luis Romaní y Jorge Oteiza, ganador del Premio Nacional de Arquitectura de 1954. Concebía la capilla como una intervención abstracta en el paisaje, con estructura laberíntica, frisos escultóricos y una gran malla suspendida que convertía el templo en un condensador de energía. Aunque nunca se edificó, quedó como una de las arquitecturas ausentes más influyentes de la modernidad española.",
+    "description_en": "An unbuilt project by Francisco Javier Sáenz de Oiza, José Luis Romaní, and Jorge Oteiza, winner of the 1954 National Architecture Prize. It conceived the chapel as an abstract intervention in the landscape, with a labyrinthine structure, sculptural friezes, and a large suspended mesh that turned the temple into a condenser of energy. Although never built, it remains one of the most influential absent architectures of Spanish modernity.",
+    "description_eu": "Francisco Javier Sáenz de Oizak, José Luis Romaník eta Jorge Oteizak egindako eraiki gabeko proiektua da, 1954ko Arkitekturako Sari Nazionala irabazi zuena. Kapera paisaian egindako esku-hartze abstraktu gisa pentsatu zuten: egitura labirintikoa, friso eskultorikoak eta tenplua energia-kondentsadore bihurtzen zuen sare handi esekia. Inoiz eraiki ez bazen ere, Espainiako modernitatearen arkitektura absente eraginkorrenetako bat izan zen."
   },
   {
     "id": "obra-9",
@@ -220,9 +220,9 @@
     "material": [],
     "category": "unbuilt",
     "subtype": "project",
-    "description_es": "Proyecto presentado por Oteiza y el arquitecto Roberto Puig al concurso internacional para el monumento a José Batlle y Ordóñez en Montevideo. Oteiza lo entendió como una culminación de su investigación sobre el espacio receptivo.",
-    "description_en": "A project submitted by Oteiza and architect Roberto Puig to the international competition for the monument to José Batlle y Ordóñez in Montevideo. Oteiza understood it as a culmination of his research into receptive space.",
-    "description_eu": "Oteizak eta Roberto Puig arkitektoak Montevideoko José Batlle y Ordóñezen monumenturako nazioarteko lehiaketara aurkeztutako proiektua. Oteizak espazio hartzaileari buruzko ikerketaren amaiera gisa ulertu zuen."
+    "description_es": "Oteiza y el arquitecto Roberto Puig idearon este proyecto para el concurso internacional convocado en Montevideo en honor al estadista José Batlle y Ordóñez. La propuesta articulaba arquitectura, escultura y topografía mediante un recinto elevado, una gran losa negra y una viga volada, configurando una colina vacía más que un monumento conmemorativo convencional. Para Oteiza fue una de las formulaciones más ambiciosas del espacio receptivo: un lugar político, cívico y silencioso.",
+    "description_en": "Oteiza and architect Roberto Puig devised this project for the international competition held in Montevideo in honor of statesman José Batlle y Ordóñez. The proposal joined architecture, sculpture, and topography through an elevated enclosure, a large black slab, and a cantilevered beam, creating an empty hill rather than a conventional commemorative monument. For Oteiza it was one of the most ambitious formulations of receptive space: political, civic, and silent.",
+    "description_eu": "Oteizak eta Roberto Puig arkitektoak Montevideon José Batlle y Ordóñez estatugilearen omenez deitutako nazioarteko lehiaketarako asmatu zuten proiektu hau. Proposamenak arkitektura, eskultura eta topografia lotzen zituen: goratutako esparru bat, lauza beltz handi bat eta habe hegalkin bat, ohiko monumentu oroigarriaren ordez muino huts bat eratuz. Oteizarentzat espazio hartzailearen formulazio anbiziotsuenetako bat izan zen: politikoa, zibikoa eta isila."
   },
   {
     "id": "obra-10",
@@ -245,9 +245,9 @@
     "material": ["steel"],
     "category": "built",
     "subtype": "monument",
-    "description_es": "Escultura pública situada en el campus de Arrosadia de la Universidad Pública de Navarra, junto al Aulario. Rinde homenaje al arquitecto Francisco Javier Sáenz de Oiza y prolonga en espacio abierto el diálogo entre escultura y arquitectura.",
-    "description_en": "A public sculpture on the Arrosadia campus of the Public University of Navarre, beside the lecture hall building. It pays homage to architect Francisco Javier Sáenz de Oiza and extends the dialogue between sculpture and architecture into open space.",
-    "description_eu": "Nafarroako Unibertsitate Publikoko Arrosadiko campusean, Ikasgelategiaren ondoan, kokatutako eskultura publikoa da. Francisco Javier Sáenz de Oiza arkitektoari omenaldia egiten dio eta eskulturaren eta arkitekturaren arteko elkarrizketa espazio irekira zabaltzen du."
+    "description_es": "Instalada en 1996 en el campus de Arrosadia de la Universidad Pública de Navarra, esta obra homenajea a Francisco Javier Sáenz de Oiza, arquitecto del campus y colaborador clave de Oteiza en Arantzazu. La pieza procede de una maqueta de 1959, Oposición de dos diedros, y está formada por planos verticales de acero que dividen el espacio sin cerrarlo. Su sencillez aparente prolonga, en un entorno universitario, la conversación entre arquitectura, vacío y pensamiento experimental.",
+    "description_en": "Installed in 1996 on the Arrosadia campus of the Public University of Navarre, this work pays homage to Francisco Javier Sáenz de Oiza, architect of the campus and a key collaborator of Oteiza at Arantzazu. The piece derives from a 1959 model, Opposition of Two Dihedrons, and is formed by vertical steel planes that divide space without closing it. Its apparent simplicity extends, in a university setting, the conversation between architecture, void, and experimental thought.",
+    "description_eu": "1996an Nafarroako Unibertsitate Publikoko Arrosadiko campusean instalatua, obra honek Francisco Javier Sáenz de Oiza omentzen du, campusaren arkitektoa eta Oteizaren Arantzazuko lankide garrantzitsua. Pieza 1959ko Oposición de dos diedros maketatik dator, eta espazioa itxi gabe zatitzen duten altzairuzko plano bertikalek osatzen dute. Bere soiltasun itxurazkoak unibertsitate-ingurunean arkitektura, hutsunea eta pentsamendu esperimentala lotzen ditu."
   },
   {
     "id": "obra-11",
@@ -270,9 +270,9 @@
     "material": ["steel"],
     "category": "built",
     "subtype": "monument",
-    "description_es": "Escultura situada junto al Planetario en el parque de Yamaguchi. Es una ampliación instalada en 1997 de una obra original de 1959 conservada en el Museo Oteiza, y condensa la evolución de las cajas vacías hacia una presencia mínima y espiritual.",
-    "description_en": "A sculpture located beside the Planetarium in Yamaguchi Park. It is a 1997 enlargement of an original 1959 work held by the Oteiza Museum, condensing the evolution of the empty boxes into a minimal and spiritual presence.",
-    "description_eu": "Yamaguchi parkeko Planetarioaren ondoan kokatutako eskultura da. Oteiza Museoan gordetako 1959ko jatorrizko obraren 1997ko handitzea da, eta kutxa hutsen bilakaera presentzia minimo eta espiritual batean biltzen du."
+    "description_es": "Situada junto al Planetario de Pamplona, en el parque de Yamaguchi, esta ampliación de 1997 parte de una obra original de 1959 conservada en el Museo Oteiza. Dos planchas oblicuas sobre una base mínima reducen la escultura a una relación esencial entre apoyo, inclinación y hueco. Como homenaje al estilema vacío del cubismo, marca el triunfo del espacio sobre la materia dentro del tramo final de las cajas vacías.",
+    "description_en": "Located beside the Pamplona Planetarium in Yamaguchi Park, this 1997 enlargement is based on an original 1959 work held by the Oteiza Museum. Two oblique plates on a minimal base reduce sculpture to an essential relationship between support, inclination, and gap. As a homage to the empty styleme of Cubism, it marks the triumph of space over matter in the final development of the empty boxes.",
+    "description_eu": "Iruñeko Planetarioaren ondoan, Yamaguchi parkean, kokatua, 1997ko handitze hau Oteiza Museoan gordetako 1959ko jatorrizko obratik abiatzen da. Oinarri minimo baten gaineko bi xafla okerrek eskultura euste, inklinazio eta hutsunearen arteko harreman funtsezkora murrizten dute. Kubismoaren estilema hutsari egindako omenaldi gisa, espazioak materiaren gain duen garaipena adierazten du kutxa hutsen azken garapenean."
   },
   {
     "id": "obra-12",
@@ -295,9 +295,9 @@
     "material": ["bronze"],
     "category": "built",
     "subtype": "monument",
-    "description_es": "Versión pública instalada en la plaza Félix Huarte de Pamplona del proyecto de 1952 para el concurso internacional de la Tate Gallery. La obra materializa en bronce dos cuerpos verticales que trasladan a la abstracción la memoria del preso político.",
-    "description_en": "A public version installed in Pamplona's Plaza Félix Huarte of the 1952 project for the Tate Gallery international competition. The bronze work materializes two vertical bodies that translate the memory of the political prisoner into abstraction.",
-    "description_eu": "Tate Galleryren nazioarteko lehiaketarako 1952ko proiektuaren Iruñeko Felix Huarte plazan instalatutako bertsio publikoa da. Brontzezko obrak bi gorputz bertikal gauzatzen ditu, preso politikoaren memoria abstrakziora eramanez."
+    "description_es": "Esta versión pública en bronce, situada en la plaza Félix Huarte de Pamplona, retoma el proyecto que Oteiza presentó en 1952 al concurso internacional londinense del Monumento al Prisionero Político Desconocido. Dos elementos verticales de gran altura, acompañados por planos en el suelo, convierten la figura del preso en una presencia abstracta y espiritual. La obra evita la ilustración literal del sufrimiento y propone, en cambio, un espacio de memoria contenido y frontal.",
+    "description_en": "This public bronze version in Pamplona's Plaza Félix Huarte revisits the project Oteiza submitted in 1952 to the London international competition for the Monument to the Unknown Political Prisoner. Two tall vertical elements, accompanied by ground planes, turn the figure of the prisoner into an abstract and spiritual presence. The work avoids literal illustration of suffering and instead proposes a restrained, frontal space of memory.",
+    "description_eu": "Iruñeko Felix Huarte plazan dagoen brontzezko bertsio publiko honek Oteizak 1952an Londresko Preso Politiko Ezezagunaren Monumenturako nazioarteko lehiaketara aurkeztutako proiektua berrartzen du. Altuera handiko bi elementu bertikalek, lurreko planoekin batera, presoaren figura presentzia abstraktu eta espiritual bihurtzen dute. Obrak sufrimenduaren irudikapen literala saihesten du eta, horren ordez, oroimenerako espazio neurtu eta aurrez aurrekoa proposatzen du."
   },
   {
     "id": "obra-13",
@@ -320,8 +320,8 @@
     "material": ["bronze"],
     "category": "built",
     "subtype": "sculpture",
-    "description_es": "Figura antropomórfica concebida en 1950 e instalada en Pamplona en 1999, hoy vinculada a la plaza de la Libertad. Sus cavidades superiores e inferiores anticipan la apertura del cuerpo escultórico que Oteiza desarrollaría en Arantzazu.",
-    "description_en": "An anthropomorphic figure conceived in 1950 and installed in Pamplona in 1999, now associated with Plaza de la Libertad. Its upper and lower cavities anticipate the opening of the sculptural body that Oteiza would later develop at Arantzazu.",
-    "description_eu": "1950ean sortu eta 1999an Iruñean instalatutako figura antropomorfikoa da, gaur egun Askatasunaren plazari lotua. Goiko eta beheko hutsuneek Oteizak Arantzazun garatuko zuen gorputz eskultorikoaren irekiera iragartzen dute."
+    "description_es": "Concebida en 1950 e instalada en Pamplona en 1999, Coreano pertenece al momento en que Oteiza aún trabaja con la figura humana, pero ya empieza a abrirla desde dentro. El cuerpo aparece erguido, compacto y al mismo tiempo horadado por cavidades que anuncian la desocupación posterior de la estatua. Situada en la plaza de la Libertad, la obra permite leer el tránsito entre su etapa expresiva y la investigación espacial que culminaría en Arantzazu y en las cajas vacías.",
+    "description_en": "Conceived in 1950 and installed in Pamplona in 1999, Korean belongs to the moment when Oteiza was still working with the human figure while beginning to open it from within. The body stands upright and compact, yet it is pierced by cavities that anticipate the later de-occupation of the statue. Located in Plaza de la Libertad, the work makes visible the transition between his expressive phase and the spatial research that would culminate at Arantzazu and in the empty boxes.",
+    "description_eu": "1950ean sortua eta 1999an Iruñean instalatua, Korearra Oteizak oraindik giza figurarekin lan egiten zuen baina barrutik irekitzen hasten zen une horri dagokio. Gorputza tente eta trinko ageri da, baina hutsuneek zeharkatzen dute, estatuaren ondorengo desokupazioa iragarriz. Askatasunaren plazan kokatua, obrak haren etapa adierazkorretik Arantzazun eta kutxa hutsetan bururatuko zen ikerketa espazialera doan trantsizioa erakusten du."
   }
 ]
