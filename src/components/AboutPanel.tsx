@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 
@@ -8,6 +9,8 @@ interface AboutPanelProps {
   onClose: () => void;
   lang: "es" | "en" | "eu";
 }
+
+const CLOSE_LABELS = { es: "Cerrar", en: "Close", eu: "Itxi" };
 
 const CONTENT = {
   es: {
@@ -49,7 +52,40 @@ const CONTENT = {
 };
 
 export default function AboutPanel({ isOpen, onClose, lang }: AboutPanelProps) {
+  const panelRef = useRef<HTMLDivElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
   const t = CONTENT[lang];
+
+  useEffect(() => {
+    if (isOpen) {
+      closeRef.current?.focus();
+    }
+  }, [isOpen]);
+
+  const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
+    if (e.key === "Escape") {
+      onClose();
+      return;
+    }
+
+    if (e.key === "Tab" && panelRef.current) {
+      const focusable = panelRef.current.querySelectorAll<HTMLElement>(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      if (focusable.length === 0) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+  }, [onClose]);
 
   return (
     <AnimatePresence>
@@ -63,18 +99,25 @@ export default function AboutPanel({ isOpen, onClose, lang }: AboutPanelProps) {
           onClick={onClose}
         >
           <motion.div
+            ref={panelRef}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="about-panel-title"
             initial={{ x: "-100%" }}
             animate={{ x: 0 }}
             exit={{ x: "-100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 200 }}
             className="w-full sm:w-[500px] md:w-[600px] bg-offwhite h-full shadow-2xl p-8 md:p-12 flex flex-col justify-between overflow-y-auto transition-colors duration-500 oteiza-grain"
             onClick={(e) => e.stopPropagation()}
+            onKeyDown={handleKeyDown}
           >
             <div className="flex flex-col">
               {/* Close Button */}
               <div className="flex justify-end mb-8">
                 <button
+                  ref={closeRef}
                   onClick={onClose}
+                  aria-label={CLOSE_LABELS[lang]}
                   className="p-2 text-concrete hover:text-rust transition-colors border border-charcoal/10 hover:border-charcoal/30 rounded-full cursor-pointer"
                 >
                   <X size={20} strokeWidth={1.5} />
@@ -86,7 +129,7 @@ export default function AboutPanel({ isOpen, onClose, lang }: AboutPanelProps) {
                 <span className="text-[10px] uppercase tracking-[0.3em] text-rust font-bold block mb-2 transition-colors duration-500">
                   {t.title}
                 </span>
-                <h2 className="text-3xl md:text-4xl font-display tracking-tight text-charcoal leading-tight transition-colors duration-500">
+                <h2 id="about-panel-title" className="text-3xl md:text-4xl font-display tracking-tight text-charcoal leading-tight transition-colors duration-500">
                   {t.subtitle}
                 </h2>
                 <div className="w-16 h-[2px] bg-rust mt-4 transition-colors duration-500" />

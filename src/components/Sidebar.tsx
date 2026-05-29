@@ -30,6 +30,7 @@ const T = {
   location: { es: "Ubicación", en: "Location", eu: "Kokalekua" },
   coordinates: { es: "Coordenadas", en: "Coordinates", eu: "Koordenadak" },
   year: { es: "Año", en: "Year", eu: "Urtea" },
+  back: { es: "Volver", en: "Back", eu: "Itzuli" },
   steel: { es: "Acero", en: "Steel", eu: "Altzairua" },
   iron: { es: "Hierro", en: "Iron", eu: "Burdina" },
   stone: { es: "Piedra", en: "Stone", eu: "Harria" },
@@ -123,6 +124,7 @@ export default function Sidebar({ artworks, lang, selectedArtwork, onClearSelect
           {isDetail && (
             <button
               onClick={handleBack}
+              aria-label={t("back")}
               className="p-1.5 -ml-1.5 text-concrete hover:text-rust transition-colors cursor-pointer"
             >
               <ChevronLeft size={18} strokeWidth={1.5} />
@@ -304,10 +306,11 @@ function DetailView({
             </div>
           </div>
 
-          <div
-            className="flex items-start gap-2 mt-3 cursor-pointer group"
+          <button
+            type="button"
             onClick={copyCoords}
-            title="Click to copy"
+            aria-label={`${t("coordinates")}: ${artwork.latitude.toFixed(4)}, ${artwork.longitude.toFixed(4)}`}
+            className="flex items-start gap-2 mt-3 cursor-pointer group text-left"
           >
             <Crosshair size={13} className="text-concrete mt-0.5 shrink-0" />
             <div className="flex flex-col">
@@ -323,7 +326,7 @@ function DetailView({
                 {artwork.latitude.toFixed(4)}, {artwork.longitude.toFixed(4)}
               </span>
             </div>
-          </div>
+          </button>
         </div>
 
         <div className="relative pl-5">

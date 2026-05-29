@@ -13,7 +13,7 @@
 :root {
   --offwhite: #F4F4F0;
   --charcoal: #1C1C1C;
-  --concrete: #8A8D8F;
+  --concrete: #666869;
   --rust: #9B4A3A;
 }
 
@@ -46,6 +46,12 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     font-weight: normal;
+  }
+
+  /* Visible focus ring for keyboard navigation */
+  :focus-visible {
+    outline: 1.5px solid var(--rust);
+    outline-offset: 2px;
   }
 
   /* MapLibre minimal overrides */

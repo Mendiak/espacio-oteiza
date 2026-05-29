@@ -108,15 +108,16 @@ export default function Filters({ activeRegion, setActiveRegion, activeCategory,
   const [tooltipY, setTooltipY] = useState<number>(0);
   const t = T[lang];
 
-  const handleMouseEnter = (e: React.MouseEvent, key: string) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const parentRect = e.currentTarget.parentElement?.parentElement?.getBoundingClientRect();
+  const handleShowTooltip = (e: React.MouseEvent | React.FocusEvent, key: string) => {
+    const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+    const parentRect = (e.currentTarget as HTMLElement).parentElement?.parentElement?.getBoundingClientRect();
     if (parentRect) {
-      // Calculate relative Y position within the filter panel
       setTooltipY(rect.top - parentRect.top);
     }
     setHoveredKey(key);
   };
+
+  const handleHideTooltip = () => setHoveredKey(null);
 
   return (
     <div className="flex items-start gap-4 flex-row-reverse">
@@ -137,8 +138,10 @@ export default function Filters({ activeRegion, setActiveRegion, activeCategory,
             <button
               key={region}
               onClick={() => setActiveRegion(activeRegion === region ? null : region)}
-              onMouseEnter={(e) => handleMouseEnter(e, region)}
-              onMouseLeave={() => setHoveredKey(null)}
+              onMouseEnter={(e) => handleShowTooltip(e, region)}
+              onMouseLeave={handleHideTooltip}
+              onFocus={(e) => handleShowTooltip(e, region)}
+              onBlur={handleHideTooltip}
               className={`text-left text-xs transition-colors duration-500 flex items-center gap-2 cursor-pointer ${
                 activeRegion === region ? "text-rust" : "text-charcoal hover:text-concrete"
               }`}
@@ -157,8 +160,10 @@ export default function Filters({ activeRegion, setActiveRegion, activeCategory,
             <button
               key={cat}
               onClick={() => setActiveCategory(activeCategory === cat ? null : cat)}
-              onMouseEnter={(e) => handleMouseEnter(e, cat)}
-              onMouseLeave={() => setHoveredKey(null)}
+              onMouseEnter={(e) => handleShowTooltip(e, cat)}
+              onMouseLeave={handleHideTooltip}
+              onFocus={(e) => handleShowTooltip(e, cat)}
+              onBlur={handleHideTooltip}
               className={`text-left text-xs transition-colors duration-500 flex items-center gap-3 cursor-pointer group/btn ${
                 activeCategory === cat ? "text-rust" : "text-charcoal hover:text-concrete"
               }`}
@@ -185,8 +190,10 @@ export default function Filters({ activeRegion, setActiveRegion, activeCategory,
             <button
               key={mat}
               onClick={() => setActiveMaterial(activeMaterial === mat ? null : mat)}
-              onMouseEnter={(e) => handleMouseEnter(e, mat)}
-              onMouseLeave={() => setHoveredKey(null)}
+              onMouseEnter={(e) => handleShowTooltip(e, mat)}
+              onMouseLeave={handleHideTooltip}
+              onFocus={(e) => handleShowTooltip(e, mat)}
+              onBlur={handleHideTooltip}
               className={`text-left text-xs transition-colors duration-500 flex items-center gap-2 cursor-pointer ${
                 activeMaterial === mat ? "text-rust" : "text-charcoal hover:text-concrete"
               }`}
