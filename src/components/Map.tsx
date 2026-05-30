@@ -7,6 +7,20 @@ import "maplibre-gl/dist/maplibre-gl.css";
 import { useTheme } from "next-themes";
 import type { Artwork } from "@/lib/types";
 
+function isWebGLSupported(): boolean {
+  if (typeof document === "undefined") return false;
+  try {
+    const canvas = document.createElement("canvas");
+    return !!(
+      canvas.getContext("webgl") ||
+      canvas.getContext("webgl2") ||
+      canvas.getContext("experimental-webgl")
+    );
+  } catch {
+    return false;
+  }
+}
+
 interface MapProps {
   artworks: Artwork[];
   activeRegion: string | null;
@@ -40,10 +54,12 @@ const LATIN_AMERICA_COUNTRIES = [
 export default function Map({ artworks, activeRegion, activeCategory, activeMaterial, onSelectArtwork, mapRef, lang }: MapProps) {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [webglSupported, setWebglSupported] = useState(true);
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
+    setWebglSupported(isWebGLSupported());
   }, []);
 
   const filteredArtworks = useMemo(() => {
@@ -100,6 +116,14 @@ export default function Map({ artworks, activeRegion, activeCategory, activeMate
     }
   };
 
+  if (mounted && !webglSupported) {
+    return (
+      <div className="absolute inset-0 z-0 flex items-center justify-center bg-offwhite text-charcoal/60 text-sm uppercase tracking-widest">
+        <span>Map unavailable — WebGL not supported in this browser</span>
+      </div>
+    );
+  }
+
   return (
     <div className="absolute inset-0 z-0 transition-opacity duration-1000">
       <MapGL
@@ -113,6 +137,7 @@ export default function Map({ artworks, activeRegion, activeCategory, activeMate
         mapStyle={mounted && theme === "dark" ? DARK_STYLE : LIGHT_STYLE}
         mapLib={maplibregl}
         attributionControl={false}
+        canvasContextAttributes={{ contextType: "webgl" }}
       >
         {filteredArtworks.map(artwork => (
           <Marker
