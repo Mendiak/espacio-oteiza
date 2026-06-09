@@ -31,6 +31,7 @@ const T = {
   coordinates: { es: "Coordenadas", en: "Coordinates", eu: "Koordenadak" },
   year: { es: "Año", en: "Year", eu: "Urtea" },
   back: { es: "Volver", en: "Back", eu: "Itzuli" },
+  backToList: { es: "Volver al listado", en: "Back to list", eu: "Itzuli zerrendara" },
   steel: { es: "Acero", en: "Steel", eu: "Altzairua" },
   iron: { es: "Hierro", en: "Iron", eu: "Burdina" },
   stone: { es: "Piedra", en: "Stone", eu: "Harria" },
@@ -122,18 +123,19 @@ export default function Sidebar({ artworks, lang, selectedArtwork, onClearSelect
           espacio oteiza
         </h1>
         <div className="flex items-center gap-3 mb-1">
-          {isDetail && (
+          {isDetail ? (
             <button
               onClick={handleBack}
-              aria-label={t("back")}
-              className="p-1.5 -ml-1.5 text-concrete hover:text-rust transition-colors cursor-pointer"
+              className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.15em] text-rust hover:text-rust/70 transition-colors cursor-pointer group"
             >
-              <ChevronLeft size={18} strokeWidth={1.5} />
+              <ChevronLeft size={14} strokeWidth={2} className="transition-transform group-hover:-translate-x-0.5" />
+              {t("backToList")}
             </button>
+          ) : (
+            <span className="text-[11px] font-semibold uppercase tracking-[0.4em] text-charcoal transition-colors duration-500">
+              {"Archivo"}
+            </span>
           )}
-          <span className="text-[11px] font-semibold uppercase tracking-[0.4em] text-charcoal transition-colors duration-500">
-            {isDetail ? "Ficha" : "Archivo"}
-          </span>
         </div>
         <div className="w-full h-px bg-charcoal/15 transition-colors duration-500 mt-3" />
       </div>

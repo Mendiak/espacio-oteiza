@@ -160,6 +160,14 @@ export default function AboutPanel({ isOpen, onClose, lang }: AboutPanelProps) {
                     {t.biographyTitle}
                   </h3>
                   <div className="flex flex-col gap-4">
+                    <div className="relative h-[200px] bg-charcoal/5 border border-charcoal/10 overflow-hidden group/img transition-colors duration-500">
+                      <img
+                        src="/images/oteiza.jpg"
+                        alt="Jorge Oteiza"
+                        className="w-full h-full object-cover grayscale filter transition-all duration-1000 group-hover/img:grayscale-0"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-charcoal/20 to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-700" />
+                    </div>
                     <p className="text-sm leading-relaxed text-charcoal/80 font-light text-justify transition-colors duration-500">
                       {t.biographyText}
                     </p>
